@@ -20,7 +20,7 @@ There are 12 notes. C, C#, D, D#, E, F, F#, G, G#, A, A#, B.
 ## What is a SARAGM generation?
 Sargam generation is a ranom pick up of notes to create a melody.
 
-Each English note corresponds to some sargam note.
+Each English note corresponds to a sargam note.
 
 Sargam notes are variable. You can assume any key on a piano as starting note - SA and continue by counting.
 
@@ -31,3 +31,5 @@ Sargam notes are variable. You can assume any key on a piano as starting note - 
 * Note population - Time graph of a note length
 * Frequency
 * Timing
+* Notes skipping
+* Tempo - How fast to play a melody
