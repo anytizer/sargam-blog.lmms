@@ -33,3 +33,8 @@ Sargam notes are variable. You can assume any key on a piano as starting note - 
 * Timing
 * Notes skipping
 * Tempo - How fast to play a melody
+
+## External Software involved
+* LMMS's XPT note import function
+* XPT XML Generation
+* C# with Visual Studio
