@@ -1,3 +1,7 @@
+![image](https://user-images.githubusercontent.com/5563341/212169242-115c7ad2-4ae9-4aed-99b7-e5f85fb06e4e.png)
+
+Screenshot: Random melody filled in LMMS.
+
 # sargam-blog.lmms
 A blog on how I achieved random sargam (hence, the melody) generation
 
