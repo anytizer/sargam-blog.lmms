@@ -25,7 +25,8 @@ There are 12 notes. C, C#, D, D#, E, F, F#, G, G#, A, A#, B. Each English note c
 Sargam notes are variable. You can assume any key on a piano as starting note - SA and continue by counting.
 
 ## What is a SARAGM generation?
-Sargam generation is a ranom pick up of notes to create a melody.
+Sargam generation is a random pick up of notes to create a melody.
+My limitation is to stay within pre-defined ascending and descending notes of a raag.
 
 ## Terminologies
 * Thaat - Parent Scale
@@ -78,4 +79,4 @@ For example, the [song structure](https://en.wikipedia.org/wiki/Song_structure) 
  6: E     -     D,C   E,E   D     G     G     E     D     C     C     D,D   C     E     -     E    
  ```
  
- And if feels like as in this audio - [listen](random.ogg) | [XPT File](random.xpt)
+ And it feels like as in this audio file - [listen](random.ogg) | [XPT File](random.xpt) for LMMS (import this file in piano roll editor).
