@@ -42,6 +42,7 @@ Sargam notes are variable. You can assume any key on a piano as starting note - 
 ## Software capabilities
 * Random note generation
 * Creating XPT file for LMMS
+* Displays the SARGAM Notes and English Scales
 
 ## Software limitations
 * You have to save the note yourself if you need it to replay in the future.
@@ -49,3 +50,5 @@ Sargam notes are variable. You can assume any key on a piano as starting note - 
 
 ## Why Bhupali?
 It is a simple melody pattern with the major pentatoic notes. It's ascending and descending notes are similar.
+Data entry to this Raag is easy, and the human ear can find out if something is not right.
+Since the usage of major notes (no shaprs, no flats) it is a perfect pick up for the project.
