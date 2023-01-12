@@ -53,3 +53,6 @@ It is a simple melody pattern with the major pentatoic notes. It's ascending and
 Data entry to this Raag is easy, and the human ear can find out if something is not right.
 Since the usage of major notes (no shaprs, no flats) it is a perfect pick up for the project.
 [More on Bhupali](https://en.wikipedia.org/wiki/Bhoopali)
+
+## Interface
+![image](https://user-images.githubusercontent.com/5563341/212173212-d9da35c9-4f06-453a-828a-08ada9a0052d.png)
