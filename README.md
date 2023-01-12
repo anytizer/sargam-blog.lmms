@@ -1,6 +1,6 @@
 ![image](https://user-images.githubusercontent.com/5563341/212169242-115c7ad2-4ae9-4aed-99b7-e5f85fb06e4e.png)
 
-Screenshot: Random melody filled in LMMS; under Bhuplai pattern.
+Screenshot: Random melody filled in LMMS; under Bhuplai raag pattern.
 
 # sargam-blog.lmms
 A blog on how I achieved random sargam (hence, the melody) generation
@@ -55,14 +55,17 @@ Since the usage of major notes (no shaprs, no flats) it is a perfect pick up for
 [More on Bhupali](https://en.wikipedia.org/wiki/Bhoopali)
 
 ## Interface
+
 ![image](https://user-images.githubusercontent.com/5563341/212173212-d9da35c9-4f06-453a-828a-08ada9a0052d.png)
 
 # Melody Structure
 A user can self-define a melody combination. There are 10 different varieties of notation timing available.
-![image](https://user-images.githubusercontent.com/5563341/212174928-c9c20afd-eacd-495f-8a97-1ce7ae26769f.png)
-Each letter corresponds to one line through out the melody.
 
-For example, ABAACB would give:
+![image](https://user-images.githubusercontent.com/5563341/212174928-c9c20afd-eacd-495f-8a97-1ce7ae26769f.png)
+
+Each letter (from A to J) corresponds to one line of lyrics through out the melody.
+
+For example, the [song structure](https://en.wikipedia.org/wiki/Song_structure) ABAACB would give:
 ```
  1: D     E     C     C     D     C     D,E   G     -     G     E     C     D     E     E     D,E  
  2: E     -     D,C   E,E   D     G     G     E     D     C     C     D,D   C     E     -     E    
