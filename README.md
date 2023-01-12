@@ -1,6 +1,6 @@
 ![image](https://user-images.githubusercontent.com/5563341/212169242-115c7ad2-4ae9-4aed-99b7-e5f85fb06e4e.png)
 
-Screenshot: Random melody filled in LMMS.
+Screenshot: Random melody filled in LMMS; under Bhuplai pattern.
 
 # sargam-blog.lmms
 A blog on how I achieved random sargam (hence, the melody) generation
@@ -38,3 +38,14 @@ Sargam notes are variable. You can assume any key on a piano as starting note - 
 * LMMS's XPT note import function
 * XPT XML Generation
 * C# with Visual Studio
+
+## Software capabilities
+* Random note generation
+* Creating XPT file for LMMS
+
+## Software limitations
+* You have to save the note yourself if you need it to replay in the future.
+* It re-generates a new set of note.
+
+## Why Bhupali?
+It is a simple melody pattern with the major pentatoic notes. It's ascending and descending notes are similar.
