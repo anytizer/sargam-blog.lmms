@@ -72,4 +72,4 @@ For example, ABAACB would give:
  6: E     -     D,C   E,E   D     G     G     E     D     C     C     D,D   C     E     -     E    
  ```
  
- And if feels like as in this audio - [listen](random.ogg) | XPT File](random.xpt)
+ And if feels like as in this audio - [listen](random.ogg) | [XPT File](random.xpt)
