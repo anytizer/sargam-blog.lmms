@@ -52,3 +52,4 @@ Sargam notes are variable. You can assume any key on a piano as starting note - 
 It is a simple melody pattern with the major pentatoic notes. It's ascending and descending notes are similar.
 Data entry to this Raag is easy, and the human ear can find out if something is not right.
 Since the usage of major notes (no shaprs, no flats) it is a perfect pick up for the project.
+[More on Bhupali](https://en.wikipedia.org/wiki/Bhoopali)
