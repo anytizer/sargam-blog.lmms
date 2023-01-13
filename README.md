@@ -229,3 +229,9 @@ There are always a multiple match due to:
 
 Oh, when the notes match to many other raags, it is worth mentioning that a raag was also a way of singing it with various styles of stresses on the syllables.
 Hence, officially, there are raags with exactly similar notes, yet different names, different times for performance, and diffence to human ears.
+
+After all, a random melody to be created. Out of many thousands possible, here is one.
+
+![image](https://user-images.githubusercontent.com/5563341/212273990-fa88ed52-0a6d-413b-8eb9-de897aa1ed83.png)
+
+[Listen to it](random-improved.ogg).
