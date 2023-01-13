@@ -194,12 +194,7 @@ When a note shares a beat time with another note, sperate them with a comma. eg.
 
 ![image](https://user-images.githubusercontent.com/5563341/212412538-9b44a60a-da7b-4d8b-ab24-eed6b516f21e.png)
 
-
-### Other markers
-
-Many SARGAM authors use their own conventions.
-I tried to bring them all together in one place.
-Hence,
+Also,
 
 * ~ and _ will be continuation markers
 * x as silecne
@@ -209,6 +204,26 @@ Hence,
 There are some other glossaries that time-share a note.
 [Meend](https://en.wikipedia.org/wiki/Meend) / [Glissando](https://en.wikipedia.org/wiki/Glissando), [Gamak](https://en.wikipedia.org/wiki/Gamaka_(music)), [Kan - Grace Note](https://en.wikipedia.org/wiki/Grace_note), Khitka, Aandolan, etc. [@realisim](https://github.com/realisim/Sargam)'s SARGAM seems to be better in this case.
 I am currently unable to handle such [ornamentations](https://en.wikipedia.org/wiki/Ornament_(music)).
+
+### standard markers
+
+I noticed, many SARGAM authors use their own conventions. And they are incompatible due to language selection, symbol selection. They come in audio form, written/printed with pen or typed in computer, or in a digital image form.
+- [embedded in devanagari lipi](https://www.youtube.com/watch?v=XhQYPonLsX8)
+- [typed in computer, in roman short forms](https://www.youtube.com/watch?v=nDkZ_vjgD-U)
+- [in a diary, motion video](https://www.youtube.com/watch?v=2Tyk6wHqpxg)
+- [photograph of a diary](https://youtu.be/xqlOL-EJeJU?t=699)
+- [Live, as to show the key pressed](https://youtu.be/ojEordFqIdU?t=63)
+- oral explantory
+- [PDF like display](https://www.sheetmusicdirect.com/se/ID_No/995947/Product.aspx)
+- in websites
+- in books
+- scanned scripts from old prints
+
+PS. these notations might have been copyrighted, non-original or modified ones from the different scale.
+I am concerned with the different mechanisms of presentation only, at this point of writing.
+There are varities of ways they are trying to preseve.
+
+It would have been better, if one-language to write the notes and parse them in computer regardless of instrument being used.
 
 ## Software Limitations
 
