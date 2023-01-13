@@ -186,19 +186,21 @@ It is that simple.
 
 # Melody Structure
 
-A user can self-define a melody structure.
+A user can self-define a melody structure of one's choice.
 There are 10 different varieties of notations available.
 Each difference is subject to change in notation's timing and frequency.
 
 ![image](https://user-images.githubusercontent.com/5563341/212174928-c9c20afd-eacd-495f-8a97-1ce7ae26769f.png)
 
-Each letter (from A to J) corresponds to one line of lyrics through out the melody.
+Each letter (group_name from A to J) corresponds to one line of lyrics through out the melody.
+
 You have to make a combination of these lines to create the structure for your own melody.
 To ease the user, I create a random lyrics per letter once while you generate your melody.
 And, this lyrics is preseved in your work.
 
-If you generate ABABCB song structure, there will be repeatitions of the notations.
-Hence, if you are lucky enough to get more pleasing notation, you can recognize it through out rest of the the song.
+If you generate **ABABCB** song structure, then, there will be repeatitions of the notations.
+The pattern A, pattern B and pattern C will be preseved.
+If you are lucky enough to get more pleasing notation, you can recognize it through out rest of the the song.
 
 For example, the [song structure](https://en.wikipedia.org/wiki/Song_structure) ABABCB would give:
 
