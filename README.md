@@ -3,11 +3,13 @@
 Screenshot: Random melody filled in LMMS; under Bhuplai raag pattern, with 4/4 time signature.
 
 # sargam-blog.lmms
+
 A blog on how I achieved practically random SARGAM (hence, the melody) generation for LMMS.
 
-(Plese notify me if something is wrong, or misleading in the text below).
+(Plese notify me if something is wrong, or misleading in the text below. I won't accept pull requests in this project, but will accept a new issue.)
 
 ## Random Melody
+
 I spent several weeks in search of random melody to be created with [LMMS](https://lmms.io/).
 For this, I came up with a new software that fills the notations. It is written in C# and using [SQLite Database](https://sqlite.org/).
 
@@ -20,17 +22,20 @@ There are several classical raags possible and they were "named" in the past. Ma
 Bhupali is assumed to be over 4,000 years old system. My randomization is based on the database of notations.
 
 ## What is a SARGAM?
+
 SARGAM is a short form created from the first basic musical notes - SA RE GA MA (PA DHA NI).
 There are 12 notes. C, C#, D, D#, E, F, F#, G, G#, A, A#, B. Each English note corresponds to a variable SARGAM note. Yes, SARGAM notes are variable.
 
-You can assume any key on a piano as starting note - SA and continue by counting until another octave.
+You can assume any key on a piano as starting note - SA and keep on counting 12 notes.
 
 ## What is a SARAGM generation?
+
 SARAGM generation is a random pick up of notes to create a melody.
 My limitation is to stay within pre-defined ascending and descending notes of a raag.
 In this case, the Bhupali notations only.
 
 ## Terminologies
+
 * Thaat - Parent Scale
 * Raag - Melody Pattern
 * Song pattern - eg. ABAACB that is a structure of a song
@@ -41,26 +46,69 @@ In this case, the Bhupali notations only.
 * Tempo - How fast to play a melody
 
 ## External Software involved
-* LMMS's XPT note import function
+
 * XPT XML Generation
+* LMMS's XPT note import function
 * C# with Visual Studio
+* Entity Framework with SQLite support
 
 ## Software capabilities
+
 * SARGAM representation that a computer can parse well without confusion.
 * Notations to sharps, flats and other octave changes are recognized.
 * Can accept any keys from C-1 to G9 ie, 127 keys piano
 * Randomly melodic note generation
 * Creating XPT file for LMMS
-* Conversion of the SARGAM Notes and English Scales
-* Easy for another user to regenerate the same melody usng piano
+* Conversion of the SARGAM Notes into English Scales
+* Easy for another user to regenerate the same melody using a real piano
+
+## Challenges in Notations Representation
+There was a clear problem of how to write the SARGAM and the English scales that match to several keys of a piano.
+I found out some classical systems of writing these notes called Bhatkhande system and some other ways.
+The purpose is to exactly reproduce how the melody for ear was created.
+So, there needed to be a system of writing these notes. I had another problem as well:
+- the notes should have been understood by the computer.
+- typing the notes should be easy using a QWERTY keyboard.
+
+I proudly happened to recreate the system ultimately with slight modifications.
+
+### Basic notations
+
+For example, notations from C4 octave would be:
+* S R G M' P D N
+* r g M d n
+
+Notations from C5 octave would be:
+* S* R* G* M'* P* D* N*
+* r* g* M* d* n*
+
+Notations from C4 octave would be:
+* S. R. G. M'. P. D. N.
+* r. g. M. d. n.
+
+Number of dots or stars would decrease or increase the octave representation.
+For example, C.. and C**
+
+### Continuation
+
+When the note extends to another timelength, it will be represented with a hyphen in that time bar.
+eg. S - - -
+
+### Other markers
+
+* ~ and _ will be continuation markers
+* x as silecne
+* pipe | or a slash / as bar separator
 
 ## Software limitations
+
 * You have to save the note yourself if you need it to replay in the future.
 * It re-generates a new set of note.
 * Does not recognize the style of singing
 * Does not prevent the history of how it was designed earier.
 
 ## Why Bhupali?
+
 It is a  melody pattern with the major pentatoic notes.
 It's ascending and descending notes are similar, as expected in reverse manner.
 Data entry to this Raag is easy, and the human ear can find out if something is not right.
@@ -84,10 +132,11 @@ You have to make a combination of these lines to create the structure for your o
 To ease the user, I create a random lyrics per letter once while you generate your melody.
 And, this lyrics is preseved in your work.
 
-If you generate ABAACB song structure there, will be repeatetions of the notations.
+If you generate ABABCB song structure there, will be repeatitions of the notations.
 Hence, if you were lucky to get more pleasing notation, you can recognize it through out rest of the the song.
 
-For example, the [song structure](https://en.wikipedia.org/wiki/Song_structure) ABAACB would give:
+For example, the [song structure](https://en.wikipedia.org/wiki/Song_structure) ABABCB would give:
+
 ```
  1: D     E     C     C     D     C     D,E   G     -     G     E     C     D     E     E     D,E  
  2: E     -     D,C   E,E   D     G     G     E     D     C     C     D,D   C     E     -     E    
@@ -95,17 +144,19 @@ For example, the [song structure](https://en.wikipedia.org/wiki/Song_structure) 
  4: E     -     D,C   E,E   D     G     G     E     D     C     C     D,D   C     E     -     E    
  5: D     D     -     E     A     C*    A     -     C*    A     C*    C*    G     A     A     -    
  6: E     -     D,C   E,E   D     G     G     E     D     C     C     D,D   C     E     -     E    
- ```
+```
  
 And it feels like as in this audio file - [listen](random.ogg) | [XPT File](random.xpt) for LMMS (import this file in piano roll editor) | [Project File](random.mmpz)
 
 ## Other possibilities
 
 ### Finding out raag name of an existing SARGAM
+
 If you fill up SARGAM, it can give you the possible raags that matches it. There are always a multiple match due to:
 * Some notes are skipped in your SARGAM.
 * It really matches to many other raags.
 
 ## Differentiation with other raags
+
 Oh, when the notes match to many other raags, it is worth mentioning that a raag was also a way of singing it with various styles of stresses on the syllables.
 Hence, officially, there are raags with exactly similar notes, yet different names, different times for performance, and diffence to human ears.
