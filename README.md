@@ -152,13 +152,13 @@ Another reason I picked up this raag is due to relatively abundance of informati
 ## Challenges in Notations Representation
 
 There was a clear problem of how to write the SARGAM and the English scales that match to several keys of a piano.
-I found out some classical systems of writing these notes called Bhatkhande system and some other ways.
+I found out some classical systems of writing these notes called [Bhatkhande](https://archive.org/search.php?query=bhatkhande) system and some other ways.
 The purpose is to exactly reproduce how the melody for ear was created.
 So, there needed to be a system of writing these notes. I had another problem as well:
 - the notes should have been understood by the computer.
 - typing the notes should be easy using a QWERTY keyboard.
 
-I proudly happened to recreate the written notation system for use with computer; ultimately with slight modifications.
+I proudly happened to recreate the written notation system for use with computer; ultimately with slight modifications and limitations.
 
 ### Basic notations
 
