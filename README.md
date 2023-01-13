@@ -1,58 +1,99 @@
 ![image](https://user-images.githubusercontent.com/5563341/212216045-484fc7cd-9b6a-4c6f-a551-0525a70f02ec.png)
 
-Screenshot: Random melody filled in LMMS; under Bhuplai raag pattern, with 4/4 time signature.
+Screenshot: Random melody filled in LMMS; under Bhupali raag pattern, with 4/4 time signature.
 
 # sargam-blog.lmms
 
-A blog on how I achieved practically random SARGAM (hence, the melody) generation for LMMS.
+How I achieved practically random, though incomplete, SARGAM generation.
 
-(Plese notify me if something is wrong, or misleading in the text below. I won't accept pull requests in this project, but will accept a new issue.)
+This page is also a bookmark to some articles in the same area.
+
+```
+Plese notify me if something is wrong, or misleading in the text below.
+I won't accept pull requests in this project, but will accept:
+  - a [new issue](https://github.com/anytizer/sargam-blog.lmms/issues/new/choose),
+  - a disucssion thread.
+```
+
+## What is a melody?
+
+It is a linear succession of musical tones percieved as single entity.
+
+- [Wikiepdia](https://en.wikipedia.org/wiki/Melody)
+- [hello music theory](https://hellomusictheory.com/learn/melody/)
+- [@earmaster](https://www.earmaster.com/music-theory-online/ch02/chapter-2-3.html)
+- [melody basic definitions](https://online.berklee.edu/takenote/conjunct-disjunct-melody-basic-definitions/)
+
+I will try to create a sound piece as **melody**, with random notes permitted within a raag.
 
 ## Random Melody
 
-I spent several weeks in search of random melody to be created with [LMMS](https://lmms.io/).
-For this, I came up with a new software that fills the notations. It is written in C# and using [SQLite Database](https://sqlite.org/).
+I spent several weeks in the year 2022 in re-search of random melody to be created with [LMMS](https://lmms.io/).
+Finally, I came up with a new software that fills the notations.
+Then immediately, it was possible to create an XML that LMMS understands.
+By this, an instant sound is possible and you can change instruments for different tonal qualities.
 
-Notes have to stay within a limited range as defined by their pattern rule called the [Raaga System](https://en.wikipedia.org/wiki/Raga),
-which will automatically fall under one of the 10 parent scales called [thaat](https://en.wikipedia.org/wiki/Thaat).
+The software is written in C# and using [SQLite Database](https://sqlite.org/).
+It consists of some major elements:
+* Database of raag and thaat
+* Random SARGAM Generator
+* SWAR Converter - conver to English scales
+* generate .xpt pattern files
+* Song structure creator
+* Linking capabilities to authorship roles: lyricists, musician, singer
 
-You can find this database at various websites including [Wikipedia](https://en.wikipedia.org/wiki/List_of_ragas_in_Hindustani_classical_music), [Sharda.org](https://www.sharda.org/raga-taal/) and some other websites blogging musical notes. I had to combine information from various such links in order to indentify how I should handle the notations for use with Computer.
+## Raag and Thaat Database
 
-There are several classical raags possible and they were "named" in the past. Many of them might have been lost over the time.
-Bhupali is assumed to be over 4,000 years old system. My randomization is based on the database of notations.
+Primarily, the notes have to stay within a limited range as defined by their melody pattern called the [Raaga System](https://en.wikipedia.org/wiki/Raga).
+Any SARGAM is likely to automatically classify under one of the 10 parent scales called [Thaat](https://en.wikipedia.org/wiki/Thaat).
+Today, a Thaat is fixed set of scales.
+And raag is a combination of selected musical notes that fall under a Thaat.
+
+You can find this database at various websites including:
+ - [Wikipedia](https://en.wikipedia.org/wiki/List_of_ragas_in_Hindustani_classical_music)
+ - [Sharda.org](https://www.sharda.org/raga-taal/)
+ - and some other websites blogging musical notes.
+
+I had to combine information from various such links in order to identify how I should handle the notations for use with a computer.
+
+My randomization is based on the database of notations per Raag.
 
 ## What is a SARGAM?
 
 SARGAM is a short form created from the first basic musical notes - SA RE GA MA (PA DHA NI).
-There are 12 notes. C, C#, D, D#, E, F, F#, G, G#, A, A#, B. Each English note corresponds to a variable SARGAM note. Yes, SARGAM notes are variable.
+There are 12 notes including sharps and flats. C, C#, D, D#, E, F, F#, G, G#, A, A#, B.
+Each English note corresponds to a variable SARGAM note.
 
+Yes, SARGAM notes are variable.
 You can assume any key on a piano as starting note - SA and keep on counting 12 notes.
 
 ## What is a SARAGM generation?
 
 SARAGM generation is a random pick up of notes to create a melody.
 My limitation is to stay within pre-defined ascending and descending notes of a raag.
-In this case, the Bhupali notations only.
 
 ## Terminologies
 
 * Thaat - Parent Scale
 * Raag - Melody Pattern
-* Song pattern - eg. ABAACB that is a structure of a song
+* Song structure - eg. ABAACB that is a structure of a song
 * Note population - Time graph of a note length
 * Frequency
 * Timing
 * Notes skipping
 * Tempo - How fast to play a melody
+* Time Signature - eg. 4/4
+* Beat
 
 ## External Software involved
 
-* XPT XML Generation
+* .xpt (XML file) Generation
 * LMMS's XPT note import function
 * C# with Visual Studio
-* Entity Framework with SQLite support
+* Entity Framework with support to SQLite
+* SQLite Database
 
-## Software capabilities
+## Software Capabilities
 
 * SARGAM representation that a computer can parse well without confusion.
 * Notations to sharps, flats and other octave changes are recognized.
@@ -70,7 +111,7 @@ So, there needed to be a system of writing these notes. I had another problem as
 - the notes should have been understood by the computer.
 - typing the notes should be easy using a QWERTY keyboard.
 
-I proudly happened to recreate the system ultimately with slight modifications.
+I proudly happened to recreate the written notation system ultimately with slight modifications.
 
 ### Basic notations
 
@@ -82,12 +123,12 @@ Notations from C5 octave would be:
 * S* R* G* M'* P* D* N*
 * r* g* M* d* n*
 
-Notations from C4 octave would be:
+Notations from C3 octave would be:
 * S. R. G. M'. P. D. N.
 * r. g. M. d. n.
 
 Number of dots or stars would decrease or increase the octave representation.
-For example, C.. and C**
+For example, C.. and C**. You can range from C-1 to G9 notes.
 
 ### Continuation
 
@@ -95,6 +136,8 @@ When the note extends to another timelength, it will be represented with a hyphe
 eg. S - - -
 
 ### Other markers
+
+Many SARGAM authors use their own conventions. I tried to bring them all together in one place. Hence,
 
 * ~ and _ will be continuation markers
 * x as silecne
@@ -105,11 +148,18 @@ eg. S - - -
 * You have to save the note yourself if you need it to replay in the future.
 * It re-generates a new set of note.
 * Does not recognize the style of singing
-* Does not prevent the history of how it was designed earier.
+* Does not prevent the history of how it was designed earlier.
+
+## What is a raag?
+Technically, a raag could be a named combination of musical notes.
+There is much more to [explore](https://en.wikipedia.org/wiki/Raga).
+But, many of them are already been [lost permanently](https://www.indianclassicalmusic.com/what-is-raag).
 
 ## Why Bhupali?
 
-It is a  melody pattern with the major pentatoic notes.
+Bhupali is assumed to be over 4,000 years old system.
+It's melody pattern has been loved by many people and it thrived for so long.
+
 It's ascending and descending notes are similar, as expected in reverse manner.
 Data entry to this Raag is easy, and the human ear can find out if something is not right.
 Since the usage of major notes (no shaprs, no flats) it is a perfect pick up for the project.
@@ -132,8 +182,8 @@ You have to make a combination of these lines to create the structure for your o
 To ease the user, I create a random lyrics per letter once while you generate your melody.
 And, this lyrics is preseved in your work.
 
-If you generate ABABCB song structure there, will be repeatitions of the notations.
-Hence, if you were lucky to get more pleasing notation, you can recognize it through out rest of the the song.
+If you generate ABABCB song structure, there will be repeatitions of the notations.
+Hence, if you are lucky enough to get more pleasing notation, you can recognize it through out rest of the the song.
 
 For example, the [song structure](https://en.wikipedia.org/wiki/Song_structure) ABABCB would give:
 
@@ -148,11 +198,12 @@ For example, the [song structure](https://en.wikipedia.org/wiki/Song_structure) 
  
 And it feels like as in this audio file - [listen](random.ogg) | [XPT File](random.xpt) for LMMS (import this file in piano roll editor) | [Project File](random.mmpz)
 
-## Other possibilities
+## Other Possibilities
 
 ### Finding out raag name of an existing SARGAM
 
-If you fill up SARGAM, it can give you the possible raags that matches it. There are always a multiple match due to:
+If you fill up SARGAM, it can give you the possible raags that matches it.
+There are always a multiple match due to:
 * Some notes are skipped in your SARGAM.
 * It really matches to many other raags.
 
