@@ -18,7 +18,7 @@ I won't accept pull requests in this project, but I will accept:
 * Someone who is interested in basics of classical music and raag database
 * Someone who knows some programming language, like [C-Sharp](https://en.wikipedia.org/wiki/C_Sharp_(programming_language))
 * Someone who knows [LMMS](https://lmms.io/) as open source music making software
-* Someone intrested in experimentation of sound design
+* Someone intrested in experimentation with [sound design](https://en.wikipedia.org/wiki/Sound_design)
 
 ## What is a melody?
 
@@ -49,7 +49,7 @@ Other tools used are:
 It consists of some major elements:
 * Database of raag and thaat, eg. [as here](https://www.sharda.org/raga-taal/).
 * Random SARGAM Generator
-* [SWAR]https://en.wikipedia.org/wiki/Svara) Converter - convert SARGAM to English scales
+* [SWAR](https://en.wikipedia.org/wiki/Svara) Converter - convert SARGAM to English scales
 * Ability to generate [.xpt](https://github.com/LMMS/lmms/pull/5891) pattern files for LMMS
 * Song structure creator
 * ~~Linking capabilities~~ to authorship roles: lyricists, musician, singer
