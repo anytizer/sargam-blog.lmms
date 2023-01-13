@@ -1,6 +1,6 @@
 ![image](https://user-images.githubusercontent.com/5563341/212169242-115c7ad2-4ae9-4aed-99b7-e5f85fb06e4e.png)
 
-Screenshot: Random melody filled in LMMS; under Bhuplai raag pattern.
+Screenshot: Random melody filled in LMMS; under Bhuplai raag pattern, with 4/4 time signature.
 
 # sargam-blog.lmms
 A blog on how I achieved practically random SARGAM, (hence, the melody) generation for LMMS.
@@ -9,12 +9,12 @@ A blog on how I achieved practically random SARGAM, (hence, the melody) generati
 
 ## Random Melody
 I spent several weeks in search of random melody to be created with [LMMS](https://lmms.io/).
-For this, I came up with a new software that fills the notations.
+For this, I came up with a new software that fills the notations. It is written in C# and using SQLite Database.
 
 Notes have to stay within a limited range as defined by their pattern rule called the [Raaga System](https://en.wikipedia.org/wiki/Raga),
 which will automatically fall under one of the 10 parent scales called [thaat](https://en.wikipedia.org/wiki/Thaat).
 
-You can find this database at various websites including Wikipedia, [Sharda.org](https://www.sharda.org/raga-taal/) and some other websites blogging musical notes.
+You can find this database at various websites including [Wikipedia](https://en.wikipedia.org/wiki/List_of_ragas_in_Hindustani_classical_music), [Sharda.org](https://www.sharda.org/raga-taal/) and some other websites blogging musical notes. I had to combine information from various such links in order to indentify how I should handle the notations for use with Computer.
 
 There are several classical raags possible and they were "named" in the past. Many of them might have been lost over the time.
 Bhupali is assumed to be over 4,000 years old system. My randomization is based on the database of notations.
@@ -46,9 +46,13 @@ In this case, the Bhupali notations only.
 * C# with Visual Studio
 
 ## Software capabilities
-* Random note generation
+* SARGAM representation that a computer can parse well without confusion.
+* Notations to sharps, flats and other octave changes are recognized.
+* Can accept any keys from C-1 to G9 ie, 127 keys piano
+* Randomly melodic note generation
 * Creating XPT file for LMMS
-* Displays the SARGAM Notes and English Scales
+* Conversion of the SARGAM Notes and English Scales
+* Easy for another user to regenerate the same melody usng piano
 
 ## Software limitations
 * You have to save the note yourself if you need it to replay in the future.
@@ -62,7 +66,8 @@ It's ascending and descending notes are similar, as expected in reverse manner.
 Data entry to this Raag is easy, and the human ear can find out if something is not right.
 Since the usage of major notes (no shaprs, no flats) it is a perfect pick up for the project.
 
-[More on Bhupali](https://en.wikipedia.org/wiki/Bhoopali)
+[More on Bhupali](https://en.wikipedia.org/wiki/Bhoopali). The basic notations used in Bhupali are:
+SA, RE, GA, PA, DHA, SA*
 
 ## Interface
 
@@ -86,4 +91,13 @@ For example, the [song structure](https://en.wikipedia.org/wiki/Song_structure) 
  6: E     -     D,C   E,E   D     G     G     E     D     C     C     D,D   C     E     -     E    
  ```
  
- And it feels like as in this audio file - [listen](random.ogg) | [XPT File](random.xpt) for LMMS (import this file in piano roll editor).
+And it feels like as in this audio file - [listen](random.ogg) | [XPT File](random.xpt) for LMMS (import this file in piano roll editor) | [Project File](random.mmpz)
+
+## Other possibilities
+### Finding out raag name of an existing SARGAM
+If you fill up SARGAM, it can give you the possible raags that matches it. There are always a multiple match due to:
+* Some notes are skipped in your SARGAM.
+* It really matches to many other raags.
+
+Differntiation with other raags:
+Oh, when the notes match to many other raags, it is worth mentioning that a raag was also a way of singing it with various styles of stresses on the syllables. Hence, officially, there are raags with exactly similar notes, yet different names, different times for performance, and diffence to human ears.
