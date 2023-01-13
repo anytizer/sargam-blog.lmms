@@ -234,4 +234,9 @@ After all, a random melody to be created. Out of many thousands possible, here i
 
 ![image](https://user-images.githubusercontent.com/5563341/212273990-fa88ed52-0a6d-413b-8eb9-de897aa1ed83.png)
 
-[Listen to it](random-improved.ogg).
+[Listen to it](random-improved.ogg). Data for [Trance Pluck](https://lmms.io/lsp/?action=show&file=19838) instrument was random.
+
+
+## Disclaimer
+
+The pictures attached are for representation only.
