@@ -3,7 +3,7 @@
 Screenshot: Random melody filled in LMMS; under Bhuplai raag pattern, with 4/4 time signature.
 
 # sargam-blog.lmms
-A blog on how I achieved practically random SARGAM, (hence, the melody) generation for LMMS.
+A blog on how I achieved practically random SARGAM (hence, the melody) generation for LMMS.
 
 (plese notify me if something is wrong, or misleading in the below text).
 
@@ -74,12 +74,18 @@ SA, RE, GA, PA, DHA, SA*
 ![image](https://user-images.githubusercontent.com/5563341/212173212-d9da35c9-4f06-453a-828a-08ada9a0052d.png)
 
 # Melody Structure
-A user can self-define a melody combination. There are 10 different varieties of notation timing available.
+A user can self-define a melody combination.
+There are 10 different varieties of notations available.
 
 ![image](https://user-images.githubusercontent.com/5563341/212174928-c9c20afd-eacd-495f-8a97-1ce7ae26769f.png)
 
 Each letter (from A to J) corresponds to one line of lyrics through out the melody.
-You have to make a combination of these lines to create the structure for your melody.
+You have to make a combination of these lines to create the structure for your own melody.
+To ease the user, I create a random lyrics per letter once while you generate your melody.
+And, this lyrics is preseved in your work.
+
+If you generate ABAACB song structure there, will be repeatetions of the notations.
+Hence, if you were lucky to get more pleasing notation, you can recognize it through out rest of the the song.
 
 For example, the [song structure](https://en.wikipedia.org/wiki/Song_structure) ABAACB would give:
 ```
@@ -94,10 +100,12 @@ For example, the [song structure](https://en.wikipedia.org/wiki/Song_structure) 
 And it feels like as in this audio file - [listen](random.ogg) | [XPT File](random.xpt) for LMMS (import this file in piano roll editor) | [Project File](random.mmpz)
 
 ## Other possibilities
+
 ### Finding out raag name of an existing SARGAM
 If you fill up SARGAM, it can give you the possible raags that matches it. There are always a multiple match due to:
 * Some notes are skipped in your SARGAM.
 * It really matches to many other raags.
 
-Differntiation with other raags:
-Oh, when the notes match to many other raags, it is worth mentioning that a raag was also a way of singing it with various styles of stresses on the syllables. Hence, officially, there are raags with exactly similar notes, yet different names, different times for performance, and diffence to human ears.
+## Differentiation with other raags
+Oh, when the notes match to many other raags, it is worth mentioning that a raag was also a way of singing it with various styles of stresses on the syllables.
+Hence, officially, there are raags with exactly similar notes, yet different names, different times for performance, and diffence to human ears.
