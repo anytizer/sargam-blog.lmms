@@ -193,6 +193,7 @@ Each difference is subject to change in notation's timing and frequency.
 ![image](https://user-images.githubusercontent.com/5563341/212174928-c9c20afd-eacd-495f-8a97-1ce7ae26769f.png)
 
 Each letter (group_name from A to J) corresponds to one line of lyrics through out the melody.
+A, B, C, D, E, F, G, H, I, J are the differnt parts of lyrics line that you can repeat.
 
 You have to make a combination of these lines to create the structure for your own melody.
 To ease the user, I create a random lyrics per letter once while you generate your melody.
