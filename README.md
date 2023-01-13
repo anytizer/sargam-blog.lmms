@@ -64,7 +64,7 @@ And raag is a combination of selected musical notes that fall under a Thaat.
 You can find this database at various websites including:
  - [Wikipedia](https://en.wikipedia.org/wiki/List_of_ragas_in_Hindustani_classical_music)
  - [Sharda.org](https://www.sharda.org/raga-taal/)
- - [@p-parkar](http://www.p-sarkar.com/Table%20of%20Indian%20Raags.htm)
+ - [@p-sarkar](http://www.p-sarkar.com/Table%20of%20Indian%20Raags.htm)
  - [Raag Time](https://raagtime.com)
  - [Raaga-Time association](https://ayurveda-foryou.com/music/raga_time.html)
  - [Raag Index](http://www.tanarang.com/english/raagIndex_eng.htm)
@@ -187,6 +187,10 @@ When the note extends to another timelength, it will be represented with a hyphe
 eg. `S - - -`.
 
 There are many unicode characters that look like a hyphen. I tried to pickup some.
+
+### Time Sharing
+
+When a note shares a beat time with another note, sperate them with a comma. eg. `S,R`. One comma means two notes together. And two or more commas in a beat time is a glitch.
 
 ### Other markers
 
