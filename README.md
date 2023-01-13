@@ -1,4 +1,4 @@
-![image](https://user-images.githubusercontent.com/5563341/212169242-115c7ad2-4ae9-4aed-99b7-e5f85fb06e4e.png)
+![image](https://user-images.githubusercontent.com/5563341/212216045-484fc7cd-9b6a-4c6f-a551-0525a70f02ec.png)
 
 Screenshot: Random melody filled in LMMS; under Bhuplai raag pattern, with 4/4 time signature.
 
