@@ -37,7 +37,7 @@ The software is written in C# and using [SQLite Database](https://sqlite.org/).
 It consists of some major elements:
 * Database of raag and thaat
 * Random SARGAM Generator
-* SWAR Converter - conver to English scales
+* SWAR Converter - convert to English scales
 * generate .xpt pattern files
 * Song structure creator
 * Linking capabilities to authorship roles: lyricists, musician, singer
@@ -52,6 +52,10 @@ And raag is a combination of selected musical notes that fall under a Thaat.
 You can find this database at various websites including:
  - [Wikipedia](https://en.wikipedia.org/wiki/List_of_ragas_in_Hindustani_classical_music)
  - [Sharda.org](https://www.sharda.org/raga-taal/)
+ - [@p-parkar](http://www.p-sarkar.com/Table%20of%20Indian%20Raags.htm)
+ - [Raag Time](https://raagtime.com)
+ - [Raaga-Time association](https://ayurveda-foryou.com/music/raga_time.html)
+ - [Raag Index](http://www.tanarang.com/english/raagIndex_eng.htm)
  - and some other websites blogging musical notes.
 
 I had to combine information from various such links in order to identify how I should handle the notations for use with a computer.
@@ -84,6 +88,7 @@ My limitation is to stay within pre-defined ascending and descending notes of a 
 * Tempo - How fast to play a melody
 * Time Signature - eg. 4/4
 * Beat
+* [more glossaries](http://www.tanarang.com/english/glossary_eng.htm)
 
 ## External Software involved
 
@@ -104,6 +109,7 @@ My limitation is to stay within pre-defined ascending and descending notes of a 
 * Easy for another user to regenerate the same melody using a real piano
 
 ## Challenges in Notations Representation
+
 There was a clear problem of how to write the SARGAM and the English scales that match to several keys of a piano.
 I found out some classical systems of writing these notes called Bhatkhande system and some other ways.
 The purpose is to exactly reproduce how the melody for ear was created.
@@ -133,17 +139,21 @@ For example, C.. and C**. You can range from C-1 to G9 notes.
 ### Continuation
 
 When the note extends to another timelength, it will be represented with a hyphen in that time bar.
-eg. S - - -
+eg. `S - - -`
+
+There are many unicode characters that look like a hyphen. I tried to pickup some.
 
 ### Other markers
 
-Many SARGAM authors use their own conventions. I tried to bring them all together in one place. Hence,
+Many SARGAM authors use their own conventions.
+I tried to bring them all together in one place.
+Hence,
 
 * ~ and _ will be continuation markers
 * x as silecne
 * pipe | or a slash / as bar separator
 
-## Software limitations
+## Software Limitations
 
 * You have to save the note yourself if you need it to replay in the future.
 * It re-generates a new set of note.
@@ -164,16 +174,21 @@ It's ascending and descending notes are similar, as expected in reverse manner.
 Data entry to this Raag is easy, and the human ear can find out if something is not right.
 Since the usage of major notes (no shaprs, no flats) it is a perfect pick up for the project.
 
-[More on Bhupali](https://en.wikipedia.org/wiki/Bhoopali). The basic notations used in Bhupali are:
-SA, RE, GA, PA, DHA, SA*
+[More on Bhupali](https://en.wikipedia.org/wiki/Bhoopali).
+The basic notations used in Bhupali are:
+SA, RE, GA, PA, DHA, SA* and returning as SA*, DHA, PA, GA, RE, SA.
+
+It is that simple.
 
 ## Interface
 
 ![image](https://user-images.githubusercontent.com/5563341/212173212-d9da35c9-4f06-453a-828a-08ada9a0052d.png)
 
 # Melody Structure
-A user can self-define a melody combination.
+
+A user can self-define a melody structure.
 There are 10 different varieties of notations available.
+Each difference is subject to change in notation's timing and frequency.
 
 ![image](https://user-images.githubusercontent.com/5563341/212174928-c9c20afd-eacd-495f-8a97-1ce7ae26769f.png)
 
