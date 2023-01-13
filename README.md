@@ -190,7 +190,10 @@ There are many unicode characters that look like a hyphen. I tried to pickup som
 
 ### Time Sharing
 
-When a note shares a beat time with another note, sperate them with a comma. eg. `S,R`. One comma means two notes together. And two or more commas in a beat time is a glitch.
+When a note shares a beat time with another note, sperate them with a comma. eg. `S,R`. One comma means two notes together. And two or more commas in a beat time is a glitch. The below notation is written as: `S - R,G P`.
+
+![image](https://user-images.githubusercontent.com/5563341/212412538-9b44a60a-da7b-4d8b-ab24-eed6b516f21e.png)
+
 
 ### Other markers
 
