@@ -5,11 +5,11 @@ Screenshot: Random melody filled in LMMS; under Bhuplai raag pattern, with 4/4 t
 # sargam-blog.lmms
 A blog on how I achieved practically random SARGAM (hence, the melody) generation for LMMS.
 
-(plese notify me if something is wrong, or misleading in the below text).
+(Plese notify me if something is wrong, or misleading in the text below).
 
 ## Random Melody
 I spent several weeks in search of random melody to be created with [LMMS](https://lmms.io/).
-For this, I came up with a new software that fills the notations. It is written in C# and using SQLite Database.
+For this, I came up with a new software that fills the notations. It is written in C# and using [SQLite Database](https://sqlite.org/).
 
 Notes have to stay within a limited range as defined by their pattern rule called the [Raaga System](https://en.wikipedia.org/wiki/Raga),
 which will automatically fall under one of the 10 parent scales called [thaat](https://en.wikipedia.org/wiki/Thaat).
