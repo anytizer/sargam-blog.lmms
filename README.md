@@ -4,7 +4,7 @@ screenshot: Random melody filled in LMMS; under Bhupali raag pattern, with 4/4 t
 
 # sargam-blog.lmms
 
-How I achieved practically random, though incomplete, SARGAM generation.
+How I experiemented and achieved practically random, though incomplete, SARGAM generation.
 
 This page is also a bookmark to some articles in the same area.
 
@@ -18,7 +18,7 @@ I won't accept pull requests in this project, but I will accept:
 * Someone who is interested in basics of classical music and raag database
 * Someone who knows some programming language, like [C-Sharp](https://en.wikipedia.org/wiki/C_Sharp_(programming_language))
 * Someone who knows [LMMS](https://lmms.io/) as open source music making software
-* Someone interested in experimentation with [sound design](https://en.wikipedia.org/wiki/Sound_design)
+* Someone who is interested in __experimentation__ with [sound design](https://en.wikipedia.org/wiki/Sound_design)
 
 ## What is a melody?
 
@@ -29,15 +29,17 @@ It is a linear succession of musical tones percieved as single entity.
 - [@earmaster](https://www.earmaster.com/music-theory-online/ch02/chapter-2-3.html)
 - [melody basic definitions](https://online.berklee.edu/takenote/conjunct-disjunct-melody-basic-definitions/)
 
-I will try to create a sound piece as **melody**, with random notes permitted within a raag.
+I will try to create a sound piece as melody, by taking random notes permitted within a raag.
 
 ## Story of Random Melody
 
 I spent several weeks in the year 2022 in re-search of random ambient melody to be created with [LMMS](https://lmms.io/).
-I came up with a new tiny software that fills these notations in a classical pattern.
+I came up with a new tiny software that fills these notations as defined in the classical way.
 Then immediately, it was possible to create an XML .xpt file that LMMS understands.
-By this, an instant sound is possible and you can change instruments for different tonal qualities without altering the SARGAM notes generated.
-Change of digital instrument would render entirely different sound.
+It is the capability of LMMS to export and import notations in XML format, so that portion of MIDI Clips can be shared within projects.
+
+By this, an instant sound is possible and you can change instruments and tempo for different tonal qualities without altering the SARGAM notes.
+Change of digital instrument would render entirely different sound experience, and mood.
 
 The software is written in C# and uses [SQLite Database](https://sqlite.org/).
 The source code will be available separately, shortly.
@@ -48,16 +50,17 @@ Other tools used are:
 * [DB Browser for SQLite](https://sqlitebrowser.org/)
 
 It consists of some major elements:
+
 * Database of raag and thaat, eg. [as in here](https://www.sharda.org/raga-taal/).
 * Random SARGAM Generator
 * [SWAR](https://en.wikipedia.org/wiki/Svara) Converter - convert SARGAM to English scales
 * Ability to generate [.xpt](https://github.com/LMMS/lmms/pull/5891) pattern files for LMMS
 * Song structure creator
-* ~~Linking capabilities~~ to authorship roles: lyricists, musician, singer
+* ~~Linking capabilities~~ to authorship roles: lyricists, musician, singer, composers and directors.
 
 ## Raag and Thaat Database
 
-Primarily, the notes have to stay within a limited range as defined by their melody pattern called the [Raaga System](https://en.wikipedia.org/wiki/Raga).
+Primarily, the notes have to stay within a limited range as defined by their melody pattern called the [Raaga](https://en.wikipedia.org/wiki/Raga).
 Any SARGAM is likely to automatically classify under one of the 10 [Thaats](https://en.wikipedia.org/wiki/Thaat).
 
 You can find this database at various websites including:
@@ -66,12 +69,11 @@ You can find this database at various websites including:
  - [@p-sarkar](http://www.p-sarkar.com/Table%20of%20Indian%20Raags.htm)
  - [Raag Time](https://raagtime.com)
  - [Raaga-Time association](https://ayurveda-foryou.com/music/raga_time.html)
- - [Raag Index](http://www.tanarang.com/english/raagIndex_eng.htm)
- - [Tanarang](http://www.tanarang.com/english/raagIndex_eng.htm)
- - and some other websites blogging musical notes.
+ - [Raag Index - Tanarang](http://www.tanarang.com/english/raagIndex_eng.htm)
+ - etc.
 
 I had to combine information from various such links in order to identify how I should handle the notations for use with a computer.
-Thus I ended up with a basic software that also reads a written pieces of notations.
+Thus I ended up with a basic software that also **parses** a written piece of notations.
 
 ## What is a SARGAM?
 
@@ -88,75 +90,73 @@ SARAGM generation is a picking up of those limited notes to create a melody; in 
 Not all the notes you pick in a sequence will be melodious.
 There will be several factors around it like timing, tempo, and expectations of occurence of next note in the sequence.
 
+The different note sequences has been already documented in the classical music.
+
 ## Terminologies
 
 * Thaat - Parent Scale
 * Raag - Melody Pattern
 * Song structure - eg. ABAACB that is a structure of a song
-* Note population
-* Frequency
-* Timing
+* Note population - what note to pick next is based on note population
+* ~~Frequency~~ - how frequently should a note occur is not addressed
+* Time length
 * Notes skipping
 * Tempo - How fast to play a melody
-* Time Signature - eg. 4/4
+* Time Signature - eg. 4/4, 2/2, 3/4
 * Beat
 * Rhythm
 * more from glossaries: [tanarang](http://www.tanarang.com/english/glossary_eng.htm), [wikipedia](https://en.wikipedia.org/wiki/Glossary_of_music_terminology)
 
 ## What is randomizing?
 
-My randomization is based on the database of notations per Raag. It is an incomplete project though.
+My randomization is based on the database of notations per Raag.
+It is an incomplete project because I cannot reach the all factors.
 My limitation is to stay within pre-defined ascending and descending notes of a raag.
+
 Luckily there is a database of Raags and their notations.
 
 ## What is a raag?
 
 Technically, a raag could be a **named** combination of musical notes.
+It could be a [permutation](https://www.berklee.edu/berklee-today/summer-2009/the-woodshed/power-of-permutation) of allowed notes.
 There is much more to [explore](https://en.wikipedia.org/wiki/Raga).
 And, many of them are already been [lost permanently](https://www.indianclassicalmusic.com/what-is-raag).
-They have unique [structures and evolution](https://eprints.soas.ac.uk/29748/1/10752720.pdf).
+They should have unique [structures, evolved](https://eprints.soas.ac.uk/29748/1/10752720.pdf) and popularized over differnt anceint times.
+
+Another reading on [permutaion]https://en.wikipedia.org/wiki/Permutation_(music))
 
 ## Why Bhupali?
 
-Bhupali is assumed to be over [4,000 years old](https://drvidyahattangadi.com/serene-raga-bhupali/) system.
-It's melody pattern has been loved by many people in various generations and hence it thrived for so long.
+[Raag Bhupali](https://en.wikipedia.org/wiki/Bhoopali). is assumed to be over [4,000 years old](https://drvidyahattangadi.com/serene-raga-bhupali/) system.
+It's melody pattern has been loved by so many people in various generations and hence it thrived for so long.
 
-It's ascending and descending notes are similar, as expected in reverse manner.
+It's ascending and descending notes are expectedly inverted.
 Data entry to this raag is easy, and the human ear can find out if something is not right.
-Since the usage of only major pentatonic notes (no shaprs, no flats) it is a perfect pick up for the project.
-
-[More on Bhupali](https://en.wikipedia.org/wiki/Bhoopali).
-
-The basic notations used in Bhupali are:
-SA, RE, GA, PA, DHA, SA* and returning as SA*, DHA, PA, GA, RE, SA.
+Since the usage of only major pentatonic notes (no shaprs, no flats) it is a perfect pick up for my project.
 
 Another reason I picked up this raag is due to relatively abundance of information available.
-- [Influence on Human Brain Waves](https://ijettjournal.org/assets/year/2018/volume-61/IJETT-V61P221.pdf)
+- [Influence on human brain waves](https://ijettjournal.org/assets/year/2018/volume-61/IJETT-V61P221.pdf)
 - [Music in motion](https://autrimncpa.wordpress.com/bhupali/)
 - [Short Takes: Bhoopali](http://www.parrikar.org/hindustani/bhoopali/)
 - [chandrakantha.com](https://chandrakantha.com/raga_raag/bhoopali/bhupali.html)
 - [Meet Kalakar](https://meetkalakar.com/Artipedia/raga-bhoop)
 - [Bansuri Bliss](https://bansuribliss.com/bhoopali/)
 
-## Software Capabilities
-
-* SARGAM representation that a computer can parse well without confusion.
-* Notations to sharps, flats and other octave changes are recognized.
-* Can accept any keys from C-1 to G9 ie, 127 keys piano
-* Randomly melodic note generation
-* Creating XPT file for LMMS
-* Conversion of the SARGAM Notes into English Scales
-* Easy for another user to regenerate the same melody using a real piano
+The basic notations used in Bhupali are:
+SA, RE, GA, PA, DHA, SA* and returning as SA*, DHA, PA, GA, RE, SA.
 
 ## Challenges in Notations Representation
 
-Representation↓ Keys →| C | C# | D | D# | E | F | F# | G | G# | A | A# | B
+ | C | C# | D | D# | E | F | F# | G | G# | A | A# | B
 -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | --
+C1 Octave Notes | S... | r... | R... | g... | G... | m... | M'... | P... | d... | D... | n... | N...
 C2 Octave Notes | S.. | r.. | R.. | g.. | G.. | m.. | M'.. | P.. | d.. | D.. | n.. | N..
 C3 Octave Notes | S. | r. | R. | g. | G. | m. | M'. | P. | d. | D. | n. | N.
-**C4 Octave Notes** | S | r | R | g | G | m | M | P | d | D | n | N
+**C4 Octave Notes** | S  | r | R | g | G | m | M | P | d | D | n | N
 C5 Octave Notes | S* | r* | R* | g* | G* | m* | M'* | P* | d* | D* | n* | N*
 C6 Octave Notes | S** | r** | R** | g** | G** | m** | M'** | P** | d** | D** | n** | N**
+C7 Octave Notes | S*** | r*** | R*** | g*** | G*** | m*** | M'*** | P*** | d*** | D*** | n*** | N***
+C8 Octave Notes | S**** | r**** | R**** | g**** | G**** | m**** | M'**** | P**** | d**** | D**** | n**** | N****
 
 There was a clear problem of how to write the SARGAM and the English scales that match to several keys of a piano.
 I found out some classical systems of writing these notes called [Bhatkhande](https://archive.org/search.php?query=bhatkhande) system and some other ways.
@@ -193,12 +193,12 @@ Notations from C6 octave would be:
 
 Number of dots or stars would decrease or increase the octave number from C4.
 For example, `S.` and `S**`. You can range from C-1 to G9 key notes.
-i.e. S....
+For example: `S....`
 
 ### Continuation
 
 When the note extends to another time length, it will be represented with a hyphen in that time.
-eg. `S - - - | S - S -`.
+eg. `S - - - | S - S -`, and `S* - - -`
 
 There are many other unicode characters that look like a hyphen. I tried to include some of them.
 
@@ -230,11 +230,11 @@ I am currently unable to handle such [ornamentations](https://en.wikipedia.org/w
 
 ### Standard Markers
 
-I noticed, many SARGAM authors use their own conventions.
-And they are incompatible due to language selection, symbol selection.
+I noticed, many SARGAM authors use their own conventions to write and educate.
+And they are incompatible due to their choice of format selection and presention styles.
 They come in audio form, written/printed with pen or typed in computer, or in a digital image form, for example.
 
-- [embedded in devanagari lipi](https://www.youtube.com/watch?v=XhQYPonLsX8)
+- [embedded in devanagari lipi](https://www.youtube.com/watch?v=XhQYPonLsX8) and [this](https://www.youtube.com/watch?v=HwYojO7ykZ4)
 - [typed in computer, in roman short forms](https://www.youtube.com/watch?v=nDkZ_vjgD-U)
 - [in a diary, motion video](https://www.youtube.com/watch?v=2Tyk6wHqpxg)
 - [photograph of a diary](https://youtu.be/xqlOL-EJeJU?t=699)
@@ -244,18 +244,29 @@ They come in audio form, written/printed with pen or typed in computer, or in a 
 - in interactive websites and animations
 - in books
 - in verbal trainings and recitements
-- scanned scripts from old prints
+- scanned pages from old scripts / print outs
+- staff notations
 
-PS. these notations might have been copyrighted, registered, non-original or modified ones from the different scale.
+Note: these notations might have been copyrighted, registered, non-original or modified ones from the different scale.
 I am concerned with the different mechanisms of their presentation only.
 
 It would have been better, if there were one-language to write these notes and parse them in computer regardless of instrument being used.
-I am not talking staff notes but SARGAM.
+I am not talking about staff notes but SARGAM in written form.
+
+## Software Capabilities
+
+* SARGAM representation that a computer can parse well without confusion.
+* Notations to sharps, flats and other octave changes are recognized.
+* Can accept any keys from C-1 to G9 ie, 127 keys piano
+* Randomly melodic note generation
+* Creating XPT file for LMMS
+* Conversion of the SARGAM Notes into English Scales
+* Easy for another user to regenerate the same melody using a real piano
 
 ## Software Limitations
 
 * You have to save the note yourself if you need it to replay in the future.
-* It re-generates a new set of note.
+* It re-generates a new set of notes.
 * Does not recognize the style of singing
 * Does not prevent the history of how it was designed earlier.
 * Usage in other beat making software has not been researched.
@@ -429,13 +440,27 @@ However, you can now write a lyrically recitable poetry with these group names. 
 
 ## Incompleteness
 
-The raag database would serve the list of possible notes (ascending ones for now; hence the implementation is incomplete.)
+The raag database would serve the list of possible notes (I considerd ascending notes only; and hence the implementation is incomplete.)
 
-The random number between -3 and +3 is a swinging index.
+The random number generated between -3 and +3 is a swinging index.
 It's purpose is to help us pick a note from the array of notes.
-Notes are aligned circulalry. `S*` and next +1 note should have been: `R*`.
-But since I have not implemented the descending notes and there is no new jump into higher octave, it is underterministic.
-Sometimes, notes stay static at `S*` for few times, yielding notes like: `S* S*,S* S* -`.
+Notes are aligned circulalry in the array. `S*` and next +1 note should have been: `R*`.
+But since I have not implemented the descending notes and there is no new jump into higher octave (taar saptak), it is underterministic.
+Sometimes, notes stay static at `S*` for few times, yielding notes like: `S* S*,S* S* -` in the peaks.
+Same thing happens at the valleys of the notes: `S` repeats in bottom instead of going into lower octave (mandhra saptak).
+
+## What did I achieve?
+
+In this experientation, I:
+
+* solved the problem of parsing SARGAM notations.
+* got more skills on C# and xml handling.
+* enhanced skills on LMMS instrumentation.
+* gained more information about classical music in theories.
+* brought up a software to write SARGAM notations that can be conveted into melodious audio.
+* opened an opportunity of Raag detection for a given SARGAM.
+* collaborated with some authors.
+* gained confidence in the areas coveted in the article.
 
 ## Notices
 
