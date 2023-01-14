@@ -119,7 +119,7 @@ They have unique [structures and evolution](https://eprints.soas.ac.uk/29748/1/1
 
 ## Why Bhupali?
 
-Bhupali is assumed to be over [4,000 years old](#) system.
+Bhupali is assumed to be over [4,000 years old](https://drvidyahattangadi.com/serene-raga-bhupali/) system.
 It's melody pattern has been loved by many people in various generations and hence it thrived for so long.
 
 It's ascending and descending notes are similar, as expected in reverse manner.
@@ -332,7 +332,10 @@ The population of note being -3 and +3 are 0% in this particular example.
 So, after `S`, the next note could be something between -2 and +2 note away, with a maximum chance of being `R` (+1, 50%).
 But it might yield anything out of -2: `P`, -1: `D`, +0: `S`, +1: `R`, +2: `G`.
 For the next loop, the starting note will the the one just selected.
-And again, another random note is picked up.
+And again, another random note is picked up from new point.
+
+A biger jump distance, eg: -4 or +4 would create a very different pitch, possibly with a chance to pick notes from another octave.
+-3 and +3 aren't even polite to ears.
 
 ## Incompleteness
 
