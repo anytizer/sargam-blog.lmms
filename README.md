@@ -19,7 +19,7 @@ Dedicated to experiement lovers.
 
 * Someone who is interested in basics of classical music and raag database
 * Someone who knows some programming language, like [C-Sharp](https://en.wikipedia.org/wiki/C_Sharp_(programming_language))
-* Someone who knows [LMMS](https://lmms.io/) as open source music making software
+* Someone who knows LMMS as open source music making software
 * Someone who is interested in __experimentation__ with [sound design](https://en.wikipedia.org/wiki/Sound_design)
 
 ## What is a melody?
@@ -34,7 +34,7 @@ I will try to create a sound piece as melody, by taking random notes permitted w
 
 ## Story of Random Melody
 
-I spent several weeks in the year 2022 in re-search of random ambient melody to be created with [LMMS](https://lmms.io/).
+I spent several weeks in the year 2022 in re-search of random ambient melody to be created with LMMS.
 I came up with a new tiny software that fills these notations as defined in the classical way.
 Then immediately, it was possible to create an XML .xpt file that LMMS understands.
 It is the capability of LMMS to export and import notations in XML format, so that portion of MIDI Clips can be shared within projects.
@@ -48,12 +48,14 @@ The source code will be available separately, shortly.
 Other tools used are:
 
 * Visual Studio with .net 7 (as of this writing)
-* Entity Framework with support to SQLite
+* [Entity Framework](https://learn.microsoft.com/en-us/ef/core/get-started/overview/first-app?tabs=netcore-cli) with support to SQLite
 * [DB Browser for SQLite](https://sqlitebrowser.org/)
+* [LMMS](https://lmms.io/) - [GitHub](https://github.com/LMMS/lmms/)
+* Some external audio player
 
-It consists of some major elements:
+It consists of these major elements:
 
-* Database of raag and thaat, eg. [as in here](https://www.sharda.org/raga-taal/).
+* Database of raag and thaat, eg. [as found here](https://www.sharda.org/raga-taal/) or [here](http://www.u.arizona.edu/~sourav/raga.htm).
 * Random SARGAM Generator
 * [SWAR](https://en.wikipedia.org/wiki/Svara) Converter - convert SARGAM to English scales
 * Ability to generate [.xpt](https://github.com/LMMS/lmms/pull/5891) pattern files for LMMS
@@ -66,13 +68,19 @@ Primarily, the notes have to stay within a limited range as defined by their mel
 Any SARGAM is likely to automatically classify under one of the 10 [Thaats](https://en.wikipedia.org/wiki/Thaat).
 
 You can find this database at various websites including:
- - [Wikipedia](https://en.wikipedia.org/wiki/List_of_ragas_in_Hindustani_classical_music)
- - [Sharda.org](https://www.sharda.org/raga-taal/)
- - [@p-sarkar](http://www.p-sarkar.com/Table%20of%20Indian%20Raags.htm)
- - [Raag Time](https://raagtime.com)
- - [Raaga-Time association](https://ayurveda-foryou.com/music/raga_time.html)
- - [Raag Index - Tanarang](http://www.tanarang.com/english/raagIndex_eng.htm)
- - etc.
+- [Wikipedia](https://en.wikipedia.org/wiki/List_of_ragas_in_Hindustani_classical_music)
+- [Sharda.org](https://www.sharda.org/raga-taal/)
+- [@p-sarkar](http://www.p-sarkar.com/Table%20of%20Indian%20Raags.htm)
+- [Raag Time](https://raagtime.com)
+- [Raaga-Time association](https://ayurveda-foryou.com/music/raga_time.html)
+- [Raag Index - Tanarang](http://www.tanarang.com/english/raagIndex_eng.htm)
+- etc.
+
+Thanks to the websites that supply at least:
+- name of raaga
+- Aroha (ascending notes)
+- Avaroha (descending notes)
+- other information like time of performance, etc.
 
 I had to combine information from these links in order to identify how I should handle the notations for use with a computer.
 Thus I ended up with a basic software that also **parses** a written piece of notations.
