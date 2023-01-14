@@ -33,10 +33,11 @@ I will try to create a sound piece as **melody**, with random notes permitted wi
 
 ## Story of Random Melody
 
-I spent several weeks in the year 2022 in re-search of random ambience melody to be created with [LMMS](https://lmms.io/).
-Finally, I came up with a new tiny software that fills these notations.
+I spent several weeks in the year 2022 in re-search of random ambient melody to be created with [LMMS](https://lmms.io/).
+I came up with a new tiny software that fills these notations in a classical pattern.
 Then immediately, it was possible to create an XML .xpt file that LMMS understands.
 By this, an instant sound is possible and you can change instruments for different tonal qualities without altering the SARGAM notes generated.
+Change of digital instrument would render entirely different sound.
 
 The software is written in C# and uses [SQLite Database](https://sqlite.org/).
 The source code will be available separately, shortly.
@@ -47,7 +48,7 @@ Other tools used are:
 * [DB Browser for SQLite](https://sqlitebrowser.org/)
 
 It consists of some major elements:
-* Database of raag and thaat, eg. [as here](https://www.sharda.org/raga-taal/).
+* Database of raag and thaat, eg. [as in here](https://www.sharda.org/raga-taal/).
 * Random SARGAM Generator
 * [SWAR](https://en.wikipedia.org/wiki/Svara) Converter - convert SARGAM to English scales
 * Ability to generate [.xpt](https://github.com/LMMS/lmms/pull/5891) pattern files for LMMS
@@ -57,9 +58,7 @@ It consists of some major elements:
 ## Raag and Thaat Database
 
 Primarily, the notes have to stay within a limited range as defined by their melody pattern called the [Raaga System](https://en.wikipedia.org/wiki/Raga).
-Any SARGAM is likely to automatically classify under one of the 10 parent scales called [Thaat](https://en.wikipedia.org/wiki/Thaat).
-Today, a Thaat is fixed set of scales.
-And raag is a combination of selected musical notes that fall under a Thaat.
+Any SARGAM is likely to automatically classify under one of the 10 [Thaats](https://en.wikipedia.org/wiki/Thaat).
 
 You can find this database at various websites including:
  - [Wikipedia](https://en.wikipedia.org/wiki/List_of_ragas_in_Hindustani_classical_music)
@@ -124,7 +123,7 @@ It's melody pattern has been loved by many people in various generations and hen
 
 It's ascending and descending notes are similar, as expected in reverse manner.
 Data entry to this raag is easy, and the human ear can find out if something is not right.
-Since the usage of major notes (no shaprs, no flats) it is a perfect pick up for the project.
+Since the usage of only major pentatonic notes (no shaprs, no flats) it is a perfect pick up for the project.
 
 [More on Bhupali](https://en.wikipedia.org/wiki/Bhoopali).
 
@@ -201,15 +200,20 @@ i.e. S....
 When the note extends to another time length, it will be represented with a hyphen in that time.
 eg. `S - - - | S - S -`.
 
-There are many other unicode characters that look like a hyphen. I tried include some of them.
+There are many other unicode characters that look like a hyphen. I tried to include some of them.
 
 ### Time Sharing
 
-When a beat uses two or more notes, sperate them with a comma, and put them together. eg. `S,R`.
+When a beat uses two or more notes, sperate them with a comma. eg. `S,R`.
 One comma means two notes together.
-And two or more commas in a beat produce a glitch in the software.
+And two or more commas in a beat produce a glitch in the software (quantization error) or crackling sound.
+
+Three commas would be too quick note.
+But, it opened a new opportunity of notation like: `R,-,-,G` and `R,G,-,-` which are differently stressed sylables.
+You can probably adjust the grace notes / meend here.
 
 The below notation is written as: `S - R,G P`.
+Combination R and G share same time length as S, -, and P.
 
 ![image](https://user-images.githubusercontent.com/5563341/212412538-9b44a60a-da7b-4d8b-ab24-eed6b516f21e.png)
 
@@ -237,14 +241,16 @@ They come in audio form, written/printed with pen or typed in computer, or in a 
 - [Live, as to show the key pressed](https://youtu.be/ojEordFqIdU?t=63)
 - Oral explanations
 - [PDF like display](https://www.sheetmusicdirect.com/se/ID_No/995947/Product.aspx)
-- in websites
+- in interactive websites and animations
 - in books
+- in verbal trainings and recitements
 - scanned scripts from old prints
 
 PS. these notations might have been copyrighted, registered, non-original or modified ones from the different scale.
 I am concerned with the different mechanisms of their presentation only.
 
-It would have been better, if there were one-language to write the notes and parse them in computer regardless of instrument being used.
+It would have been better, if there were one-language to write these notes and parse them in computer regardless of instrument being used.
+I am not talking staff notes but SARGAM.
 
 ## Software Limitations
 
@@ -350,6 +356,7 @@ A biger jump distance, eg: -4 or +4 would create a very different pitch, possibl
 ## Incompleteness
 
 The raag database would serve the list of possible notes (ascending ones for now; hence the implementation is incomplete.)
+
 The random number between -3 and +3 is a swinging index.
 It's purpose is to help us pick a note from the array of notes.
 Notes are aligned circulalry. `S*` and next +1 note should have been: `R*`.
