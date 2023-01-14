@@ -42,7 +42,7 @@ The software is written in C# and uses [SQLite Database](https://sqlite.org/).
 The source code will be available separately, shortly.
 
 Other tools used are:
-* C# with Visual Studio
+* Visual Studio with .net 7 (as of this writing)
 * Entity Framework with support to SQLite
 * [DB Browser for SQLite](https://sqlitebrowser.org/)
 
@@ -184,8 +184,9 @@ Notations from C6 octave would be:
 * S** R** G** M'** P** D** N**
 * r** g** M** d** n**
 
-Number of dots or stars would decrease or increase the octave representation.
-For example, C.. and C**. You can range from C-1 to G9 notes.
+Number of dots or stars would decrease or increase the octave number from C4.
+For example, `S.` and `S**`. You can range from C-1 to G9 key notes.
+i.e. S....
 
 ### Continuation
 
@@ -196,9 +197,9 @@ There are many other unicode characters that look like a hyphen. I tried include
 
 ### Time Sharing
 
-When a beat shares a note's time with another note, sperate them with a comma.
-eg. `S,R`. One comma means two notes together.
-And two or more commas in a beat time is produces a glitch in the software.
+When a beat uses two or more notes, sperate them with a comma, and put them together. eg. `S,R`.
+One comma means two notes together.
+And two or more commas in a beat produce a glitch in the software.
 
 The below notation is written as: `S - R,G P`.
 
@@ -304,6 +305,44 @@ After all, a random melody to be created. Out of many thousands possible, here i
 [Listen](https://freesound.org/s/669592/) or [download](random-improved.ogg), and view [.xpt midi clip](random.xpt).
 Data for [Trance Pluck](https://lmms.io/lsp/?action=show&file=19838) instrument was random.
 
+## Explaining the partial source code
+
+Check the code below to determine how the randomization has been implemented.
+
+```
+int[] steps = new int[] { -3, -2, -1, +0, +1, +2, +3 };
+int[] percentage = new int[] { 0, 1, 1, 2, 5, 1, 0 };
+
+int s = 0;
+foreach (int step in steps)
+{
+    int random_count = percentage[s++];
+    for (int rc = 0; rc < random_count; ++rc)
+        hops.Add(step);
+}
+```
+
+A `step` is a jump distance from (hop) one pitch to another.
+In case of Bhupali, with a random step of `+2`, next note after `S` would be `G`.
+But if the step was `-1` the next note selected will be `D.`.
+The percentage chances of appearance of `-1` is 10%.
+The percentage chances of appearance of `+1` is 50%.
+The population of note being -3 and +3 are 0% in this particular example.
+
+So, after `S`, the next note could be something between -2 and +2 note away, with a maximum chance of being `R` (+1, 50%).
+But it might yield anything out of -2: `P`, -1: `D`, +0: `S`, +1: `R`, +2: `G`.
+For the next loop, the starting note will the the one just selected.
+And again, another random note is picked up.
+
+## Incompleteness
+
+The raag database would serve the list of possible notes (ascending ones for now; hence the implementation is incomplete.)
+The random number between -3 and +3 is a swinging index.
+It's purpose is to help us pick a note from the array of notes.
+Notes are aligned circulalry. `S*` and next +1 note should have been: `R*`.
+But since I have not implemented the descending notes and there is no new jump into higher octave, it is underterministic.
+Sometimes, notes stay static at `S*` for few times, yielding notes like: `S* S*,S* S* -`.
+
 ## Notices
 
 * The pictures attached are for representation only.
@@ -311,4 +350,4 @@ Data for [Trance Pluck](https://lmms.io/lsp/?action=show&file=19838) instrument 
 * This article was written by human hands, not AI generated.
 * I do not have affilitions to the third party links.
 * Everything in this project is an experiment.
-* The included project should not match to existing melodies.
+* The included project is at some point, generated randomly, and it should not match to existing melodies.
