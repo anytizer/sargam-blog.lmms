@@ -320,7 +320,6 @@ I am not talking about staff notes but SARGAM in written form.
 * Randomly melodic note generation
 * Creating XPT file for LMMS
 * Conversion of the SARGAM Notes into English Scales
-* Easy for another user to regenerate the same melody using a real piano
 
 ## Software Limitations
 
