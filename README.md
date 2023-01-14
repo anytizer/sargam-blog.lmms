@@ -108,24 +108,33 @@ The different note sequences has been already documented in the classical music.
 * Song structure - eg. ABAACB that is a structure of a song
 * Note population - what note to pick next is based on note population
 * ~~Frequency~~ - how frequently should a note occur is not addressed
-* Time length
-* Notes skipping
+* sharing Time length - two notes are played in the given time length
+* Notes skipping - not to accept immediate next or previous note, but to jump into the other note behind or ahead.
 * Tempo - How fast to play a melody
-* Time Signature - eg. 4/4, 2/2, 3/4
+* [Time Signature](https://en.wikipedia.org/wiki/Time_signature) - eg. 4/4, 2/2, 3/4
 * Beat
 * Rhythm
 * more from glossaries: [tanarang](http://www.tanarang.com/english/glossary_eng.htm), [wikipedia](https://en.wikipedia.org/wiki/Glossary_of_music_terminology)
 
 ## What is randomizing?
 
-The core of the project is to create a randomized sound as melody.
-Luckily the database of notes and Raags have been already documented since the old times.
+You do not know which note comes next.
+It may return back, repeat (continue same note) or move ahead.
+To return or move ahead, there are 2 notes possible (I allow to skip by one-note).
+
+It picks up next note from these 5 possible notes randomly.
+
+* return 2 notes back
+* return 1 note back
+* continue same note
+* move ahead by 1 note
+* move ahead by 2 notes
+
+The core of the project is to create a randomized sound as melody in this unexeted behaviour.
+Luckily there is a database of notes and Raags that have been already documented since the old times.
 I will generate sound based on [these rules](https://www.swarganga.org/articles/icmconcepts/icm13.php), and the database.
 
-My randomization is based on the database of notations per Raag.
-It is an incomplete project because I cannot address the all factors.
-
-The randomization should create new and unfamiliar melody, yet, hoping pleasant to hear.
+The randomization should create new and unfamiliar melody, yet, hoping to be pleasant to hear.
 
 ## What is a raag?
 
@@ -135,11 +144,11 @@ There is much more to [explore](https://en.wikipedia.org/wiki/Raga).
 And, many of them are already been [lost permanently](https://www.indianclassicalmusic.com/what-is-raag).
 They should have unique [structures, evolved](https://eprints.soas.ac.uk/29748/1/10752720.pdf) and popularized over differnt anceint times.
 
-Another reading on [permutaion]https://en.wikipedia.org/wiki/Permutation_(music))
+Another reading on [permutaion]https://en.wikipedia.org/wiki/Permutation_(music)).
 
 ## Why Bhupali?
 
-[Raag Bhupali](https://en.wikipedia.org/wiki/Bhoopali). is assumed to be over [4,000 years old](https://drvidyahattangadi.com/serene-raga-bhupali/) system.
+[Raag Bhupali](https://en.wikipedia.org/wiki/Bhoopali) is assumed to be over [4,000 years old](https://drvidyahattangadi.com/serene-raga-bhupali/) system.
 It's melody pattern has been loved by so many people in various generations and hence it thrived for so long.
 
 It's ascending and descending notes are expectedly inverted.
@@ -154,11 +163,35 @@ Another reason I picked up this raag is due to relatively abundance of informati
 - [Meet Kalakar](https://meetkalakar.com/Artipedia/raga-bhoop)
 - [Bansuri Bliss](https://bansuribliss.com/bhoopali/)
 
-Many people know the Bhupali already in some forms.
+Many people already know the Bhupali in some forms.
 So, it will be easier to collect feedbacks on the sound produced.
 
-The basic notations used in Bhupali are:
+The basic notations set used in raag Bhupali are:
 SA, RE, GA, PA, DHA, SA* and returning as SA*, DHA, PA, GA, RE, SA.
+
+My randomization is based on the notations __per raag__.
+For this, I needed a database of notations in each raag.
+Everytime I want to invoke the randomizer, I should feed the raag, compulsorily.
+
+Another raag [Durgaa](https://en.wikipedia.org/wiki/Durga_(raga)) has a different set of notes allowed.
+`SA RE MA PA DHA SA*`.
+
+The randomizer is going to pick different set of notes for Durgaa and Bhupali.
+For example, a random note of +2 with respect to `SA` will be `MA` for Durgaa, and `GA` for Bhupali.
+That is hence, a huge difference in the sounds of these two raags.
+
+In the code,
+
+```
+string sargams = sargamizer.lyrics(lines, numerator, denominator, raag_name_selected, population_data)
+```
+
+These are the parameters:
+* `lines`: how long the sargam text should be
+* `numerator`: part of time signature defining how many bars should there be in each line.
+* `denominator`: part of time signature defining how many notes per bar should there be.
+* `raag_name_selected`: Currently active raag.
+* `population_data`: population of notes for randomization.
 
 ## Challenges in Notations Representation
 
@@ -387,6 +420,7 @@ So, the maximum population of notes has to stay within -2, -1, -, +1, +2 range.
 Meanwhile, I am unable to address:
 * [vaadi](https://en.wikipedia.org/wiki/Vadi_(music))
 * [samvaadi](https://en.wikipedia.org/wiki/Samavadi)
+* [Varjit](http://www.soundofindia.com/showarticle.asp?in_article_id=-1437420927) - auto disconnected
 * nyaasa (landing) notes.
 
 ## Raaga SQL table structure
