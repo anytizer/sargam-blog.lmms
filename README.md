@@ -10,8 +10,8 @@ This page is also a bookmark to some useful articles in the same area.
 
 Plese notify me if something is wrong, or misleading in the text below.
 I won't accept pull requests in this project, but I will accept:
-  - a [new issue](https://github.com/anytizer/sargam-blog.lmms/issues/new/choose),
-  - a disucssion thread.
+* a [new issue](https://github.com/anytizer/sargam-blog.lmms/issues/new/choose),
+* a disucssion thread.
 
 ## Audience
 
@@ -58,7 +58,7 @@ It consists of some major elements:
 * [SWAR](https://en.wikipedia.org/wiki/Svara) Converter - convert SARGAM to English scales
 * Ability to generate [.xpt](https://github.com/LMMS/lmms/pull/5891) pattern files for LMMS
 * Song structure creator
-* ~~Linking capabilities~~ to authorship roles: lyricists, musician, singer, composers and directors.
+* ~~Linking capabilities~~ to authorship roles: lyricist, musician, singer, composer and director.
 
 ## Raag and Thaat Database
 
@@ -74,16 +74,22 @@ You can find this database at various websites including:
  - [Raag Index - Tanarang](http://www.tanarang.com/english/raagIndex_eng.htm)
  - etc.
 
-I had to combine information from various such links in order to identify how I should handle the notations for use with a computer.
+I had to combine information from these links in order to identify how I should handle the notations for use with a computer.
 Thus I ended up with a basic software that also **parses** a written piece of notations.
 
 ## What is a SARGAM?
 
 SARGAM is a short form created from the first basic musical notes - SA RE GA MA (PA DHA NI).
-There are 12 notes including sharps and flats. C, C#, D, D#, E, F, F#, G, G#, A, A#, B.
+There are 12 notes including sharps and flats.
+
+x | C | C# | D | D# | E | F | F# | G | G# | A | A# | B
+-- | --  | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | --
+SARGAMs | S  | r | R | g | G | m | M | P | d | D | n | N
+
 Each English note corresponds to a variable SARGAM note.
 
 Yes, SARGAM notes are variable.
+S, and P do not have sharps or flats.
 You can assume any key on a piano as starting note - SA and keep on counting 12 notes from there.
 
 ## What is a SARAGM generation?
@@ -203,6 +209,8 @@ Notations from C6 octave would be:
 Number of dots or stars would decrease or increase the octave number from C4.
 For example, `S.` and `S**`. You can range from C-1 to G9 key notes.
 For example: `S....`
+
+For many users, C3, C4 and C5 octaves should be ok. This has definitely clearer, short and non-confusing notes.
 
 ### Continuation
 
