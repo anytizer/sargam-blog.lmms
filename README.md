@@ -157,6 +157,7 @@ C2 Octave Notes | S.. | r.. | R.. | g.. | G.. | m.. | M'.. | P.. | d.. | D.. | n
 C3 Octave Notes | S. | r. | R. | g. | G. | m. | M'. | P. | d. | D. | n. | N.
 **C4 Octave Notes** | S | r | R | g | G | m | M | P | d | D | n | N
 C5 Octave Notes | S* | r* | R* | g* | G* | m* | M'* | P* | d* | D* | n* | N*
+C6 Octave Notes | S** | r** | R** | g** | G** | m** | M'** | P** | d** | D** | n** | N**
 
 There was a clear problem of how to write the SARGAM and the English scales that match to several keys of a piano.
 I found out some classical systems of writing these notes called [Bhatkhande](https://archive.org/search.php?query=bhatkhande) system and some other ways.
