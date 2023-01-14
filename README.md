@@ -6,7 +6,7 @@ screenshot: Random melody filled in LMMS; under Bhupali raag pattern, with 4/4 t
 
 How I experiemented and achieved practically random, though incomplete, SARGAM generation.
 
-This page is also a bookmark to some articles in the same area.
+This page is also a bookmark to some useful articles in the same area.
 
 Plese notify me if something is wrong, or misleading in the text below.
 I won't accept pull requests in this project, but I will accept:
@@ -14,6 +14,8 @@ I won't accept pull requests in this project, but I will accept:
   - a disucssion thread.
 
 ## Audience
+
+Dedicated to experiement lovers.
 
 * Someone who is interested in basics of classical music and raag database
 * Someone who knows some programming language, like [C-Sharp](https://en.wikipedia.org/wiki/C_Sharp_(programming_language))
@@ -23,13 +25,12 @@ I won't accept pull requests in this project, but I will accept:
 ## What is a melody?
 
 It is a linear succession of musical tones percieved as single entity.
+I will try to create a sound piece as melody, by taking random notes permitted within a raag.
 
 - [Wikiepdia](https://en.wikipedia.org/wiki/Melody)
 - [hello music theory](https://hellomusictheory.com/learn/melody/)
 - [@earmaster](https://www.earmaster.com/music-theory-online/ch02/chapter-2-3.html)
 - [melody basic definitions](https://online.berklee.edu/takenote/conjunct-disjunct-melody-basic-definitions/)
-
-I will try to create a sound piece as melody, by taking random notes permitted within a raag.
 
 ## Story of Random Melody
 
@@ -38,13 +39,14 @@ I came up with a new tiny software that fills these notations as defined in the 
 Then immediately, it was possible to create an XML .xpt file that LMMS understands.
 It is the capability of LMMS to export and import notations in XML format, so that portion of MIDI Clips can be shared within projects.
 
-By this, an instant sound is possible and you can change instruments and tempo for different tonal qualities without altering the SARGAM notes.
-Change of digital instrument would render entirely different sound experience, and mood.
+By this, an instant sound is possible and you can change instruments and tempo, beats and effects for different tonal qualities, without altering the SARGAM notes.
+Change of digital instrument would render entirely different sound experience, and mood to the listener.
 
 The software is written in C# and uses [SQLite Database](https://sqlite.org/).
 The source code will be available separately, shortly.
 
 Other tools used are:
+
 * Visual Studio with .net 7 (as of this writing)
 * Entity Framework with support to SQLite
 * [DB Browser for SQLite](https://sqlitebrowser.org/)
@@ -86,9 +88,10 @@ You can assume any key on a piano as starting note - SA and keep on counting 12 
 
 ## What is a SARAGM generation?
 
-SARAGM generation is a picking up of those limited notes to create a melody; in a __written form__.
-Not all the notes you pick in a sequence will be melodious.
-There will be several factors around it like timing, tempo, and expectations of occurence of next note in the sequence.
+SARAGM generation is a picking up of those notes to create a melody; in a __written form__.
+Another person or software should be able to recreate the similar sound as intended by the original author.
+
+There will be factors around a melody, like: timing, tempo, and expectations of occurence of next note in the sequence.
 
 The different note sequences has been already documented in the classical music.
 
@@ -109,11 +112,14 @@ The different note sequences has been already documented in the classical music.
 
 ## What is randomizing?
 
-My randomization is based on the database of notations per Raag.
-It is an incomplete project because I cannot reach the all factors.
-My limitation is to stay within pre-defined ascending and descending notes of a raag.
+The core of the project is to create a randomized sound as melody.
+Luckily the database of notes and Raags have been already documented since the old times.
+I will generate sound based on [these rules](https://www.swarganga.org/articles/icmconcepts/icm13.php), and the database.
 
-Luckily there is a database of Raags and their notations.
+My randomization is based on the database of notations per Raag.
+It is an incomplete project because I cannot address the all factors.
+
+The randomization should create new and unfamiliar melody, yet, hoping pleasant to hear.
 
 ## What is a raag?
 
@@ -142,12 +148,15 @@ Another reason I picked up this raag is due to relatively abundance of informati
 - [Meet Kalakar](https://meetkalakar.com/Artipedia/raga-bhoop)
 - [Bansuri Bliss](https://bansuribliss.com/bhoopali/)
 
+Many people know the Bhupali already in some forms.
+So, it will be easier to collect feedbacks on the sound produced.
+
 The basic notations used in Bhupali are:
 SA, RE, GA, PA, DHA, SA* and returning as SA*, DHA, PA, GA, RE, SA.
 
 ## Challenges in Notations Representation
 
- | C | C# | D | D# | E | F | F# | G | G# | A | A# | B
+x | C | C# | D | D# | E | F | F# | G | G# | A | A# | B
 -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | --
 C1 Octave Notes | S... | r... | R... | g... | G... | m... | M'... | P... | d... | D... | n... | N...
 C2 Octave Notes | S.. | r.. | R.. | g.. | G.. | m.. | M'.. | P.. | d.. | D.. | n.. | N..
@@ -198,7 +207,7 @@ For example: `S....`
 ### Continuation
 
 When the note extends to another time length, it will be represented with a hyphen in that time.
-eg. `S - - - | S - S -`, and `S* - - -`
+eg. `S - - - | S - S -`, and `S* - - -`.
 
 There are many other unicode characters that look like a hyphen. I tried to include some of them.
 
@@ -206,11 +215,12 @@ There are many other unicode characters that look like a hyphen. I tried to incl
 
 When a beat uses two or more notes, sperate them with a comma. eg. `S,R`.
 One comma means two notes together.
-And two or more commas in a beat produce a glitch in the software (quantization error) or crackling sound.
+And two or more commas in a beat might produce a digital glitch or crackling sound in the software (quantization error).
 
-Three commas would be too quick note.
+Three commas would be too quick notes served in 1 beat.
 But, it opened a new opportunity of notation like: `R,-,-,G` and `R,G,-,-` which are differently stressed sylables.
 You can probably adjust the grace notes / meend here.
+Unfortunately `R,-,-,-` is same as `R` but with CPU loads.
 
 The below notation is written as: `S - R,G P`.
 Combination R and G share same time length as S, -, and P.
@@ -445,9 +455,18 @@ The raag database would serve the list of possible notes (I considerd ascending 
 The random number generated between -3 and +3 is a swinging index.
 It's purpose is to help us pick a note from the array of notes.
 Notes are aligned circulalry in the array. `S*` and next +1 note should have been: `R*`.
-But since I have not implemented the descending notes and there is no new jump into higher octave (taar saptak), it is underterministic.
+But since I have not implemented the descending notes and there is no new jump into higher octave ([taar saptak](https://en.wikipedia.org/wiki/Tar_Saptak)), it is underterministic.
 Sometimes, notes stay static at `S*` for few times, yielding notes like: `S* S*,S* S* -` in the peaks.
-Same thing happens at the valleys of the notes: `S` repeats in bottom instead of going into lower octave (mandhra saptak).
+Same thing happens at the valleys of the notes: `S` repeats in bottom instead of going into lower octave ([mandhra saptak](#)).
+
+## Will the sound be useful?
+
+I am just looking for some ambience in the final output.
+But, you can regenerate your own varieties and use then in different ways.
+
+It should ideally support other raags as well.
+
+Plese let me know your interests in the un-sanitized source codes I have now.
 
 ## What did I achieve?
 
@@ -455,12 +474,13 @@ In this experientation, I:
 
 * solved the problem of parsing SARGAM notations.
 * got more skills on C# and xml handling.
+* built APIs around this theme.
 * enhanced skills on LMMS instrumentation.
 * gained more information about classical music in theories.
-* brought up a software to write SARGAM notations that can be conveted into melodious audio.
+* brought up a [software](#) to write SARGAM notations that can be conveted into melodious audio.
 * opened an opportunity of Raag detection for a given SARGAM.
 * collaborated with some authors.
-* gained confidence in the areas coveted in the article.
+* gained confidence in the areas covered.
 
 ## Notices
 
