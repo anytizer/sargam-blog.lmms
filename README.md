@@ -1,6 +1,6 @@
 ![image](https://user-images.githubusercontent.com/5563341/212216045-484fc7cd-9b6a-4c6f-a551-0525a70f02ec.png)
 
-screenshot: Random melody filled in LMMS; under Bhupali raag pattern, with 4/4 time signature.
+screenshot: Randomly filled melody in LMMS; under Bhupali raag pattern, with 4/4 time signature.
 
 # sargam-blog.lmms
 
@@ -458,6 +458,8 @@ Notes are aligned circulalry in the array. `S*` and next +1 note should have bee
 But since I have not implemented the descending notes and there is no new jump into higher octave ([taar saptak](https://en.wikipedia.org/wiki/Tar_Saptak)), it is underterministic.
 Sometimes, notes stay static at `S*` for few times, yielding notes like: `S* S*,S* S* -` in the peaks.
 Same thing happens at the valleys of the notes: `S` repeats in bottom instead of going into lower octave ([mandhra saptak](#)).
+
+![image](https://user-images.githubusercontent.com/5563341/212498847-99dbc9c8-944f-47b5-b5f6-ab2d90d388a7.png)
 
 ## Will the sound be useful?
 
