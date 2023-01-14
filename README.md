@@ -289,6 +289,8 @@ Notice how line #1 matches A, line 2 matches B, line 3 re-matches A, and so on.
 
 ### Finding out raag name of an existing SARGAM
 
+![image](https://user-images.githubusercontent.com/5563341/212450263-a5720fc3-1b40-420b-a1cf-6a0ad26797e1.png)
+
 If you fill up SARGAM, it can give you the possible raags that matches it.
 
 But there are **always** a multiple match due to:
