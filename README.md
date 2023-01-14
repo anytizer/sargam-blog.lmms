@@ -346,12 +346,43 @@ The percentage chances of appearance of `+1` is 50%.
 The population of note being -3 and +3 are 0% in this particular example.
 
 So, after `S`, the next note could be something between -2 and +2 note away, with a maximum chance of being `R` (+1, 50%).
-But it might yield anything out of -2: `P`, -1: `D`, +0: `S`, +1: `R`, +2: `G`.
+But it might yield anything out of -2: `P.`, -1: `D.`, +0: `S`, +1: `R`, +2: `G`.
 For the next loop, the starting note will the the one just selected.
 And again, another random note is picked up from new point.
 
-A biger jump distance, eg: -4 or +4 would create a very different pitch, possibly with a chance to pick notes from another octave.
+A biger jump distance, eg: -4 or +4 would create a very different/nasty pitch.
+It can include notes from another octave.
 -3 and +3 aren't even polite to ears.
+So, the maximum population of notes has to stay within -2, -1, -, +1, +2 range.
+Meanwhile, I am unable to address:
+* [vaadi](https://en.wikipedia.org/wiki/Vadi_(music))
+* [samvaadi](https://en.wikipedia.org/wiki/Samavadi)
+* nyaasa (landing) notes.
+
+## Raaga SQL table structure
+
+```
+CREATE TABLE "classical_raags" (
+	"raag_id"	TEXT NOT NULL,
+	"thaat_id"	TEXT NOT NULL,
+	"raag_number"	INTEGER NOT NULL,
+	"raag_name"	TEXT NOT NULL,
+	"raag_thaat"	TEXT NOT NULL,
+	"raag_ascending"	TEXT NOT NULL,
+	"raag_descending"	TEXT NOT NULL,
+	"raag_varjit"	TEXT NOT NULL,
+	"raag_pakad"	TEXT NOT NULL,
+	"raag_chalan"	TEXT NOT NULL,
+	"raag_vaadi"	TEXT NOT NULL,
+	"raag_samvaadi"	TEXT NOT NULL,
+	"raag_vivadi"	TEXT NOT NULL,
+	"raag_nyasa"	TEXT NOT NULL,
+	"raag_timing"	TEXT NOT NULL,
+	"raag_notes"	TEXT NOT NULL,
+	"raag_processed"	TEXT NOT NULL,
+	PRIMARY KEY("raag_id")
+);
+```
 
 ## Incompleteness
 
