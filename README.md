@@ -338,7 +338,7 @@ foreach (int step in steps)
 }
 ```
 
-A `step` is a jump distance from (hop) one pitch to another.
+A `step` is a note's jump distance (hop) from one pitch to another.
 In case of Bhupali, with a random step of `+2`, next note after `S` would be `G`.
 But if the step was `-1` the next note selected will be `D.`.
 The percentage chances of appearance of `-1` is 10%.
@@ -354,6 +354,7 @@ A biger jump distance, eg: -4 or +4 would create a very different/nasty pitch.
 It can include notes from another octave.
 -3 and +3 aren't even polite to ears.
 So, the maximum population of notes has to stay within -2, -1, -, +1, +2 range.
+
 Meanwhile, I am unable to address:
 * [vaadi](https://en.wikipedia.org/wiki/Vadi_(music))
 * [samvaadi](https://en.wikipedia.org/wiki/Samavadi)
@@ -383,6 +384,48 @@ CREATE TABLE "classical_raags" (
 	PRIMARY KEY("raag_id")
 );
 ```
+
+Population data is store as:
+
+```
+CREATE TABLE "population" (
+	"population_id"	TEXT NOT NULL,
+	"population_name"	TEXT NOT NULL,
+	"population_lines"	TEXT NOT NULL,
+	"step_minus3"	TEXT NOT NULL,
+	"step_minus2"	TEXT NOT NULL,
+	"step_minus1"	TEXT NOT NULL,
+	"step_zero0"	TEXT NOT NULL,
+	"step_plus1"	TEXT NOT NULL,
+	"step_plus2"	TEXT NOT NULL,
+	"step_plus3"	TEXT NOT NULL,
+	"group_name"	TEXT NOT NULL UNIQUE,
+	PRIMARY KEY("population_id")
+);
+```
+
+step_minus3 means -3, and its datbase value is the population count.
+Similar for other populations of -2, -1, +0, +1, +2, +3 notes.
+
+Unique column group name is associated in the song struture.
+For example, my example data has:
+
+Population Name | Group Name
+----------------|-----------
+[Aalap](https://en.wikipedia.org/wiki/Alap)             | A
+Aalap Closer                                            | B
+[Chorus](https://en.wikipedia.org/wiki/Chorus)          | C
+Sthaai                                                  | D
+[Antaraa](https://en.wikipedia.org/wiki/Antara_(music)) | E
+Bridge          | F
+Closer          | G
+Sanchaari       | H
+Aabhog          | I
+Outro           | J
+
+The purpose of pushing these population configuration to database is to allow a user too change the behaviour/reaction of the application, without having to rewrite/compile the code.
+
+However, you can now write a lyrically recitable poetry with these group names. Please see melody structure above.
 
 ## Incompleteness
 
