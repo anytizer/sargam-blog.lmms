@@ -18,7 +18,7 @@ I won't accept pull requests in this project, but I will accept:
 * Someone who is interested in basics of classical music and raag database
 * Someone who knows some programming language, like [C-Sharp](https://en.wikipedia.org/wiki/C_Sharp_(programming_language))
 * Someone who knows [LMMS](https://lmms.io/) as open source music making software
-* Someone intrested in experimentation with [sound design](https://en.wikipedia.org/wiki/Sound_design)
+* Someone interested in experimentation with [sound design](https://en.wikipedia.org/wiki/Sound_design)
 
 ## What is a melody?
 
@@ -94,7 +94,7 @@ There will be several factors around it like timing, tempo, and expectations of 
 * Thaat - Parent Scale
 * Raag - Melody Pattern
 * Song structure - eg. ABAACB that is a structure of a song
-* Note population - Time graph of a note length
+* Note population
 * Frequency
 * Timing
 * Notes skipping
@@ -106,7 +106,7 @@ There will be several factors around it like timing, tempo, and expectations of 
 
 ## What is randomizing?
 
-My randomization is based on the database of notations per Raag. It is an incomplete project.
+My randomization is based on the database of notations per Raag. It is an incomplete project though.
 My limitation is to stay within pre-defined ascending and descending notes of a raag.
 Luckily there is a database of Raags and their notations.
 
@@ -120,10 +120,10 @@ They have unique [structures and evolution](https://eprints.soas.ac.uk/29748/1/1
 ## Why Bhupali?
 
 Bhupali is assumed to be over [4,000 years old](#) system.
-It's melody pattern has been loved by many people and it thrived for so long.
+It's melody pattern has been loved by many people in various generations and hence it thrived for so long.
 
 It's ascending and descending notes are similar, as expected in reverse manner.
-Data entry to this Raag is easy, and the human ear can find out if something is not right.
+Data entry to this raag is easy, and the human ear can find out if something is not right.
 Since the usage of major notes (no shaprs, no flats) it is a perfect pick up for the project.
 
 [More on Bhupali](https://en.wikipedia.org/wiki/Bhoopali).
@@ -153,12 +153,14 @@ Another reason I picked up this raag is due to relatively abundance of informati
 
 There was a clear problem of how to write the SARGAM and the English scales that match to several keys of a piano.
 I found out some classical systems of writing these notes called [Bhatkhande](https://archive.org/search.php?query=bhatkhande) system and some other ways.
-The purpose is to exactly reproduce how the melody for ear was created.
-So, there needed to be a system of writing these notes. I had another problem as well:
+The purpose is to exactly reproduce the melody for ear by reading a written form of SARGAM.
+
+I had another problem as well:
 - the notes should have been understood by the computer.
 - typing the notes should be easy using a QWERTY keyboard.
+- notations should be convertible to the form understood by melody software.
 
-I proudly happened to recreate the written notation system for use with computer; ultimately with slight modifications and limitations.
+I proudly happened to recreate the written notation system for use with **computer**; ultimately with slight modifications and limitations.
 
 ### Basic notations
 
@@ -178,19 +180,27 @@ Notations from C2 octave would be:
 * S.. R.. G.. M'.. P.. D.. N..
 * r.. g.. M.. d.. n..
 
+Notations from C6 octave would be:
+* S** R** G** M'** P** D** N**
+* r** g** M** d** n**
+
 Number of dots or stars would decrease or increase the octave representation.
 For example, C.. and C**. You can range from C-1 to G9 notes.
 
 ### Continuation
 
-When the note extends to another timelength, it will be represented with a hyphen in that time bar.
-eg. `S - - -`.
+When the note extends to another time length, it will be represented with a hyphen in that time.
+eg. `S - - - | S - S -`.
 
-There are many unicode characters that look like a hyphen. I tried to pickup some.
+There are many other unicode characters that look like a hyphen. I tried include some of them.
 
 ### Time Sharing
 
-When a note shares a beat time with another note, sperate them with a comma. eg. `S,R`. One comma means two notes together. And two or more commas in a beat time is a glitch. The below notation is written as: `S - R,G P`.
+When a beat shares a note's time with another note, sperate them with a comma.
+eg. `S,R`. One comma means two notes together.
+And two or more commas in a beat time is produces a glitch in the software.
+
+The below notation is written as: `S - R,G P`.
 
 ![image](https://user-images.githubusercontent.com/5563341/212412538-9b44a60a-da7b-4d8b-ab24-eed6b516f21e.png)
 
@@ -205,25 +215,27 @@ There are some other glossaries that time-share a note.
 [Meend](https://en.wikipedia.org/wiki/Meend) / [Glissando](https://en.wikipedia.org/wiki/Glissando), [Gamak](https://en.wikipedia.org/wiki/Gamaka_(music)), [Kan - Grace Note](https://en.wikipedia.org/wiki/Grace_note), Khitka, Aandolan, etc. [@realisim](https://github.com/realisim/Sargam)'s SARGAM seems to be better in this case.
 I am currently unable to handle such [ornamentations](https://en.wikipedia.org/wiki/Ornament_(music)).
 
-### standard markers
+### Standard Markers
 
-I noticed, many SARGAM authors use their own conventions. And they are incompatible due to language selection, symbol selection. They come in audio form, written/printed with pen or typed in computer, or in a digital image form.
+I noticed, many SARGAM authors use their own conventions.
+And they are incompatible due to language selection, symbol selection.
+They come in audio form, written/printed with pen or typed in computer, or in a digital image form, for example.
+
 - [embedded in devanagari lipi](https://www.youtube.com/watch?v=XhQYPonLsX8)
 - [typed in computer, in roman short forms](https://www.youtube.com/watch?v=nDkZ_vjgD-U)
 - [in a diary, motion video](https://www.youtube.com/watch?v=2Tyk6wHqpxg)
 - [photograph of a diary](https://youtu.be/xqlOL-EJeJU?t=699)
 - [Live, as to show the key pressed](https://youtu.be/ojEordFqIdU?t=63)
-- oral explantory
+- Oral explanations
 - [PDF like display](https://www.sheetmusicdirect.com/se/ID_No/995947/Product.aspx)
 - in websites
 - in books
 - scanned scripts from old prints
 
-PS. these notations might have been copyrighted, non-original or modified ones from the different scale.
-I am concerned with the different mechanisms of presentation only, at this point of writing.
-There are varities of ways they are trying to preseve.
+PS. these notations might have been copyrighted, registered, non-original or modified ones from the different scale.
+I am concerned with the different mechanisms of their presentation only.
 
-It would have been better, if one-language to write the notes and parse them in computer regardless of instrument being used.
+It would have been better, if there were one-language to write the notes and parse them in computer regardless of instrument being used.
 
 ## Software Limitations
 
@@ -268,7 +280,9 @@ For example, the [song structure](https://en.wikipedia.org/wiki/Song_structure) 
  6: E     -     D,C   E,E   D     G     G     E     D     C     C     D,D   C     E     -     E    
 ```
 
-And it feels like as in this audio file - [listen](random.ogg) | [XPT File](random.xpt) for LMMS (import this file in piano roll editor) | [Full Project File](random.mmpz)
+Notice how line #1 matches A, line 2 matches B, line 3 re-matches A, and so on.
+
+[listen](random.ogg) to this corresponding audio. | Or, import the [.xpt File](random.xpt) in LMMS piano roll editor | [Download full project](random.mmpz)
 
 ## Other Possibilities
 
@@ -276,14 +290,12 @@ And it feels like as in this audio file - [listen](random.ogg) | [XPT File](rand
 
 If you fill up SARGAM, it can give you the possible raags that matches it.
 
-But there are always a multiple match due to:
+But there are **always** a multiple match due to:
 * Some notes are skipped in your SARGAM.
 * It really matches to many other raags.
 
-## Differentiation with other raags
-
-Oh, when the notes match to many other raags, it is worth mentioning that a raag was also a way of singing it with various styles of stresses on the syllables.
-Hence, officially, there are raags with exactly similar set of notes, yet different names, presentation styles, different times for performance, and diffence to human ears.
+When the notations match to many other raags, it is worth mentioning that a raag was also a way of singing it with various styles of stresses on the syllables.
+Hence, officially, there are raags made of exactly similar set of notes, yet different names, presentation styles, different times for performance, and diffence to human ears, and serve different moods.
 
 After all, a random melody to be created. Out of many thousands possible, here is one.
 
@@ -297,4 +309,6 @@ Data for [Trance Pluck](https://lmms.io/lsp/?action=show&file=19838) instrument 
 * The pictures attached are for representation only.
 * Randomization attempt does not supress creativity in note selection.
 * This article was written by human hands, not AI generated.
-* I do not have affilitions to the links provided.
+* I do not have affilitions to the third party links.
+* Everything in this project is an experiment.
+* The included project should not match to existing melodies.
