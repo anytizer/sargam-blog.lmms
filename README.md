@@ -151,6 +151,13 @@ Another reason I picked up this raag is due to relatively abundance of informati
 
 ## Challenges in Notations Representation
 
+Representation↓ Keys →| C | C# | D | D# | E | F | F# | G | G# | A | A# | B
+-- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | --
+C2 Octave Notes | S.. | r.. | R.. | g.. | G.. | m.. | M'.. | P.. | d.. | D.. | n.. | N..
+C3 Octave Notes | S. | r. | R. | g. | G. | m. | M'. | P. | d. | D. | n. | N.
+**C4 Octave Notes** | S | r | R | g | G | m | M | P | d | D | n | N
+C5 Octave Notes | S* | r* | R* | g* | G* | m* | M'* | P* | d* | D* | n* | N*
+
 There was a clear problem of how to write the SARGAM and the English scales that match to several keys of a piano.
 I found out some classical systems of writing these notes called [Bhatkhande](https://archive.org/search.php?query=bhatkhande) system and some other ways.
 The purpose is to exactly reproduce the melody for ear by reading a written form of SARGAM.
