@@ -485,15 +485,16 @@ Population Name | Group Name
 [Aalap](https://en.wikipedia.org/wiki/Alap)             | A
 Aalap Closer                                            | B
 [Chorus](https://en.wikipedia.org/wiki/Chorus)          | C
-Sthaai                                                  | D
+(Sthaai](https://en.wikipedia.org/wiki/Sthayi)          | D
 [Antaraa](https://en.wikipedia.org/wiki/Antara_(music)) | E
-Bridge          | F
+[Bridge](https://en.wikipedia.org/wiki/Bridge_(music))  | F
 Closer          | G
 Sanchaari       | H
 Aabhog          | I
 Outro           | J
+Random          | ?
 
-The purpose of pushing these population configuration to database is to allow a user too change the behaviour/reaction of the application, without having to rewrite/compile the code.
+The purpose of pushing these population configuration to database is to allow a user too change the basic behaviour (or reaction) of the application, without having to compile the software.
 
 However, you can now write a lyrically recitable poetry with these group names. Please see melody structure above.
 
