@@ -474,10 +474,10 @@ CREATE TABLE "population" (
 );
 ```
 
-step_minus3 means -3, and its datbase value is the population count.
+step_minus3 means -3, and its database value is the population count.
 Similar for other populations of -2, -1, +0, +1, +2, +3 notes.
 
-Unique column group name is associated in the song struture.
+Unique column `group_name` is associated in the melody struture.
 For example, my example data has:
 
 Population Name | Group Name | Population | Notes
