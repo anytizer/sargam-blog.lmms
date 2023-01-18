@@ -480,10 +480,10 @@ Similar for other populations of -2, -1, +0, +1, +2, +3 notes.
 Unique column `group_name` is associated in the melody struture.
 For example, my example data has:
 
-Population Name | Group Name | Population | Notes
+Population Name | Group Name | Sample Population | Notes
 ----------------|----------- | ---------- | -
-[Aalap](https://en.wikipedia.org/wiki/Alap)             | A | - | Longer notes
-Aalap Closer                                            | B | - | -
+[Aalap](https://en.wikipedia.org/wiki/Alap)             | A | 0, 1, 3, 2, 3, 0, 0 | Longer notes
+Aalap Closer                                            | B | 0, 3, 2, 3, 2, 3, 0 | -
 [Chorus](https://en.wikipedia.org/wiki/Chorus)          | C | - | -
 [Sthaai](https://en.wikipedia.org/wiki/Sthayi)          | D | - | Most prominent part
 [Antaraa](https://en.wikipedia.org/wiki/Antara_(music)) | E | - | -
