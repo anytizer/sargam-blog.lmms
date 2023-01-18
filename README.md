@@ -15,12 +15,12 @@ I won't accept pull requests in this project, but I will accept:
 
 ## Audience
 
-Dedicated to experiement lovers.
+Dedicated to experiement lovers who:
 
-* Someone who is interested in basics of classical music and raag database
-* Someone who knows some programming language, like [C-Sharp](https://en.wikipedia.org/wiki/C_Sharp_(programming_language))
-* Someone who knows LMMS as open source music making software
-* Someone who is interested in __experimentation__ with [sound design](https://en.wikipedia.org/wiki/Sound_design)
+* is interested in basics of classical music and raag database
+* knows some programming language, like [C-Sharp](https://en.wikipedia.org/wiki/C_Sharp_(programming_language))
+* knows LMMS as open source music making software
+* is interested in __experimenting__ with [sound design](https://en.wikipedia.org/wiki/Sound_design)
 
 ## What is a melody?
 
@@ -64,7 +64,7 @@ It consists of these major elements:
 
 ## Raag and Thaat Database
 
-Primarily, the notes have to stay within a limited range as defined by their melody pattern called the [Raaga](https://en.wikipedia.org/wiki/Raga).
+Primarily, the notes have to stay within a limited range as defined by their melody pattern called the [Raag](https://en.wikipedia.org/wiki/Raga).
 Any SARGAM is likely to automatically classify under one of the 10 [Thaats](https://en.wikipedia.org/wiki/Thaat).
 
 You can find this database at various websites including:
@@ -72,12 +72,12 @@ You can find this database at various websites including:
 - [Sharda.org](https://www.sharda.org/raga-taal/)
 - [@p-sarkar](http://www.p-sarkar.com/Table%20of%20Indian%20Raags.htm)
 - [Raag Time](https://raagtime.com)
-- [Raaga-Time association](https://ayurveda-foryou.com/music/raga_time.html)
+- [Raag-Time association](https://ayurveda-foryou.com/music/raga_time.html)
 - [Raag Index - Tanarang](http://www.tanarang.com/english/raagIndex_eng.htm)
 - etc.
 
 Thanks to the websites that supply at least:
-- name of raaga
+- name of raag
 - Aroha (ascending notes)
 - Avaroha (descending notes)
 - other information like time of performance, etc.
@@ -430,7 +430,7 @@ Meanwhile, I am unable to address:
 * [Varjit](http://www.soundofindia.com/showarticle.asp?in_article_id=-1437420927) - auto disconnected
 * nyaasa (landing) notes.
 
-## Raaga SQL table structure
+## Raag SQL table structure
 
 ```
 CREATE TABLE "classical_raags" (
