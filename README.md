@@ -20,7 +20,7 @@ Dedicated to experiement lovers who:
 * is interested in basics of classical music and raag database
 * knows some programming language, like [C-Sharp](https://en.wikipedia.org/wiki/C_Sharp_(programming_language))
 * knows LMMS as open source music making software
-* is interested in __experimenting__ with [sound design](https://en.wikipedia.org/wiki/Sound_design)
+* is interested in [sound design](https://en.wikipedia.org/wiki/Sound_design)
 
 ## What is a melody?
 
@@ -29,7 +29,7 @@ I will try to create a sound piece as melody, by taking random notes permitted w
 
 - [Wikiepdia](https://en.wikipedia.org/wiki/Melody)
 - [hello music theory](https://hellomusictheory.com/learn/melody/)
-- [@earmaster](https://www.earmaster.com/music-theory-online/ch02/chapter-2-3.html)
+- [earmaster](https://www.earmaster.com/music-theory-online/ch02/chapter-2-3.html)
 - [melody basic definitions](https://online.berklee.edu/takenote/conjunct-disjunct-melody-basic-definitions/)
 
 ## Story of Random Melody
@@ -64,16 +64,18 @@ It consists of these major elements:
 
 ## Raag and Thaat Database
 
-Primarily, the notes have to stay within a limited range as defined by their melody pattern called the [Raag](https://en.wikipedia.org/wiki/Raga).
+Primarily, the notes have to stay within a limited range as defined by their melody pattern called the [raag](https://en.wikipedia.org/wiki/Raga).
 Any SARGAM is likely to automatically classify under one of the 10 [Thaats](https://en.wikipedia.org/wiki/Thaat).
 
 You can find this database at various websites including:
 - [Wikipedia](https://en.wikipedia.org/wiki/List_of_ragas_in_Hindustani_classical_music)
 - [Sharda.org](https://www.sharda.org/raga-taal/)
-- [@p-sarkar](http://www.p-sarkar.com/Table%20of%20Indian%20Raags.htm)
+- [The World of Hindusthani Ragas](http://www.u.arizona.edu/~sourav/raga.htm)
+- [p-sarkar](http://www.p-sarkar.com/Table%20of%20Indian%20Raags.htm)
 - [Raag Time](https://raagtime.com)
-- [Raag-Time association](https://ayurveda-foryou.com/music/raga_time.html)
+- [Raag - Time Association](https://ayurveda-foryou.com/music/raga_time.html)
 - [Raag Index - Tanarang](http://www.tanarang.com/english/raagIndex_eng.htm)
+- [SwarGanga](https://www.swarganga.org/raagabase.php)
 - etc.
 
 Thanks to the websites that supply at least:
@@ -427,7 +429,7 @@ So, the maximum population of notes has to stay within -2, -1, -, +1, +2 range.
 Meanwhile, I am unable to address:
 * [vaadi](https://en.wikipedia.org/wiki/Vadi_(music))
 * [samvaadi](https://en.wikipedia.org/wiki/Samavadi)
-* [Varjit](http://www.soundofindia.com/showarticle.asp?in_article_id=-1437420927) - auto disconnected
+* [Varjit](http://www.soundofindia.com/showarticle.asp?in_article_id=-1437420927) - auto excluded becase it does not appear in the database
 * nyaasa (landing) notes.
 
 ## Raag SQL table structure
@@ -530,7 +532,7 @@ In this experientation, I:
 * enhanced skills on LMMS instrumentation.
 * gained more information about classical music in theories.
 * brought up a [software](#) to write SARGAM notations that can be conveted into melodious audio.
-* opened an opportunity of Raag detection for a given SARGAM.
+* opened an opportunity of raag detection for a given SARGAM.
 * collaborated with some authors.
 * gained confidence in the areas covered.
 
