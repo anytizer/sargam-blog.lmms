@@ -154,7 +154,7 @@ There is much more to [explore](https://en.wikipedia.org/wiki/Raga).
 And, many of them are already been [lost permanently](https://www.indianclassicalmusic.com/what-is-raag).
 They should have unique [structures, evolved](https://eprints.soas.ac.uk/29748/1/10752720.pdf) and popularized over differnt anceint times.
 
-Another reading on [permutaion]https://en.wikipedia.org/wiki/Permutation_(music)).
+Another reading on [permutaion](https://en.wikipedia.org/wiki/Permutation_(music)).
 
 ## Why Bhupali?
 
@@ -207,6 +207,7 @@ These are the parameters:
 
 x | C | C# | D | D# | E | F | F# | G | G# | A | A# | B
 -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | --
+C0 Octave Notes | S.... | r.... | R.... | g.... | G.... | m.... | M'.... | P.... | d.... | D.... | n.... | N....
 C1 Octave Notes | S... | r... | R... | g... | G... | m... | M'... | P... | d... | D... | n... | N...
 C2 Octave Notes | S.. | r.. | R.. | g.. | G.. | m.. | M'.. | P.. | d.. | D.. | n.. | N..
 C3 Octave Notes | S. | r. | R. | g. | G. | m. | M'. | P. | d. | D. | n. | N.
@@ -215,6 +216,7 @@ C5 Octave Notes | S* | r* | R* | g* | G* | m* | M'* | P* | d* | D* | n* | N*
 C6 Octave Notes | S** | r** | R** | g** | G** | m** | M'** | P** | d** | D** | n** | N**
 C7 Octave Notes | S*** | r*** | R*** | g*** | G*** | m*** | M'*** | P*** | d*** | D*** | n*** | N***
 C8 Octave Notes | S**** | r**** | R**** | g**** | G**** | m**** | M'**** | P**** | d**** | D**** | n**** | N****
+C9 Octave Notes | S***** | r***** | R***** | g***** | G***** | m***** | M'***** | P***** | d***** | D***** | n***** | N*****
 
 There was a clear problem of how to write the SARGAM and the English scales that match to several keys of a piano.
 I found out some classical systems of writing these notes called [Bhatkhande](https://archive.org/search.php?query=bhatkhande) system and some other ways.
@@ -226,6 +228,8 @@ I had another problem as well:
 - notations should be convertible to the form understood by melody software.
 
 I proudly happened to recreate the written notation system for use with **computer**; ultimately with slight modifications and limitations.
+Only problem is the lower or higher the octave, it is relatively difficult to read the note by human note.
+Or otherwise, it is clearly a non-confising and printable notation.
 
 ### Basic notations
 
@@ -526,7 +530,7 @@ Plese let me know your interests in the un-sanitized source codes I have now.
 
 In this experientation, I:
 
-* solved the problem of parsing SARGAM notations.
+* solved the problem of [parsing](parsing.md) written/typed SARGAM notations.
 * got more skills on C# and xml handling.
 * built APIs around this theme.
 * enhanced skills on LMMS instrumentation.
@@ -544,3 +548,4 @@ In this experientation, I:
 * I do not have affilitions to the third party links.
 * Everything in this project is an experiment.
 * The included project is at some point, generated randomly, and it should not match to existing melodies.
+* Choice of instrument preset can lead to different experience.
