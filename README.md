@@ -37,7 +37,7 @@ I will try to create a sound piece as melody, by taking random notes permitted w
 I spent several weeks in the year 2022 in re-search of random ambient melody to be created with LMMS.
 I came up with a new tiny software that fills these notations as defined in the classical way.
 Then immediately, it was possible to create an XML .xpt file that LMMS understands.
-It is the capability of LMMS to export and import notations in XML format, so that portion of MIDI Clips can be shared within projects.
+It is the capability of LMMS to export and import notations in XML format, so that portion of sounds can be shared within projects.
 
 By this, an instant sound is possible and you can change instruments and tempo, beats and effects for different tonal qualities, without altering the SARGAM notes.
 Change of digital instrument would render entirely different sound experience, and mood to the listener.
@@ -393,7 +393,7 @@ After all, a random melody to be created. Out of many thousands possible, here i
 
 ![image](https://user-images.githubusercontent.com/5563341/212273990-fa88ed52-0a6d-413b-8eb9-de897aa1ed83.png)
 
-[Listen](https://freesound.org/s/669592/) or [download](random-improved.ogg), and view [.xpt midi clip](random.xpt).
+[Listen](https://freesound.org/s/669592/) or [download](random-improved.ogg), and view [.xpt clip](random.xpt).
 Data for [Trance Pluck](https://lmms.io/lsp/?action=show&file=19838) instrument was random.
 
 ## Explaining the partial source code
