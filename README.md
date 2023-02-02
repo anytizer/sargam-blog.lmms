@@ -395,7 +395,7 @@ After all, a random melody to be created. Out of many thousands possible, here i
 
 [Listen](https://freesound.org/s/669592/) or [download](random-improved.ogg), and view [.xpt clip](random.xpt).
 Data for [Trance Pluck](https://lmms.io/lsp/?action=show&file=19838) instrument was random.
-Other plugins: [Synth Tom](https://lmms.io/lsp/?action=show&file=20269) and [#](Kick Solid).
+Other plugins: [Synth Tom](https://lmms.io/lsp/?action=show&file=20269) and [Kick Solid](#).
 
 ## Explaining the partial source code
 
